@@ -1,4 +1,4 @@
-# proxy2
+# SaferWeb
 
 HTTP/HTTPS proxy in a single python script
 
