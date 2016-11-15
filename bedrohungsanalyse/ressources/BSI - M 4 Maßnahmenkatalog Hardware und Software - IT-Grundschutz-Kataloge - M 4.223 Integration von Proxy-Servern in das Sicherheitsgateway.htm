@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+     <!-- base href="https://www.bsi.bund.de/" -->
+     <meta charset="UTF-8">
+     <title>BSI  -  M 4 Maßnahmenkatalog Hardware und Software - 
+IT-Grundschutz-Kataloge - M 4.223 Integration von Proxy-Servern in das 
+Sicherheitsgateway</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=1">
+     <meta name="generator" content="Government Site Builder">
+
+    <meta name="keywords" content="Maßnahme, Proxy-Server">
+     <!-- 
+        Realisiert mit dem Government Site Builder.
+        Die Content Management Lösung der Bundesverwaltung.
+        www.government-site-builder.de
+      -->
+     <link rel="canonical" href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Inhalt/_content/m/m04/m04223.html"><span>@media print {#ghostery-purple-box {display:none !important}}</span>
+     <link rel="copyright" href="https://www.bsi.bund.de/DE/Service/Impressum/impressum_node.html" type="text/html" title="Impressum">
+     <link rel="glossary" href="https://www.bsi.bund.de/DE/Service/Glossar/glossar_node.html" type="text/html" title="Glossar">
+     <link rel="start" href="https://www.bsi.bund.de/DE/Home/home_node.html" type="text/html" title="Homepage">
+     <link rel="contents" href="https://www.bsi.bund.de/DE/Service/Sitemap/sitemap_node.html" type="text/html" title="Übersicht">
+     <link rel="search" href="https://www.bsi.bund.de/DE/Service/Suche/suche_node.html" type="text/html" title="Suche">
+
+     <link rel="shortcut icon" href="https://www.bsi.bund.de/SiteGlobals/Frontend/Images/favicon.ico?__blob=normal&amp;v=1" type="image/ico">
+
+
+<link rel="stylesheet" href="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/normalize.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/_libs.css" type="text/css">
+<link rel="stylesheet" href="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/addon_foundation.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/small.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/medium.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/large.css" type="text/css" media="projection, screen, handheld">
+<!--[if IE 9]><link rel="stylesheet"  href="SiteGlobals/Frontend/Styles/BSI/addon_iefix_9.css?v=2" type="text/css" /><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="SiteGlobals/Frontend/Styles/BSI/addon_iefix.css?v=2" type="text/css" /><![endif]-->
+<link rel="stylesheet" href="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/addon_print.css" type="text/css" media="print">
+
+<link rel="stylesheet" href="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/addon_materna.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/addon_extension.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/addon_seiteteilen.css" type="text/css" media="projection, screen, handheld">
+
+
+
+  </head>
+  <body class="gsb startseite lang-de js-on">
+
+
+<!--  Modul mobile Navigation -->
+<input id="nav-trigger" class="nav-trigger" type="checkbox">
+<label tabindex="0" for="nav-trigger">
+    <span class="navigationButton">
+        <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve"><rect width="30" height="6"></rect>
+            <rect y="24" width="30" height="6"></rect>
+            <rect y="12" width="30" height="6"></rect>
+        </svg>
+        Menü
+    </span>
+    <span class="searchButton">
+        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="283.385" height="285" viewBox="0 0 283.385 285" overflow="visible" enable-background="new 0 0 283.385 285" xml:space="preserve">
+        <path fill="#373737" d="M194.017,0c-49.278,0-89.369,40.091-89.369,89.369c0,21.212,7.435,40.719,19.827,56.061l-15.63,15.632
+            c-7.119-1.896-15.021-0.072-20.604,5.511l-81.989,81.99c-8.336,8.336-8.336,21.851,0,30.187c8.335,8.335,21.85,8.335,30.185,0
+            l81.991-81.99c5.582-5.583,7.407-13.486,5.511-20.604l15.823-15.823c15.055,11.537,33.867,18.406,54.256,18.406
+            c49.277,0,89.368-40.091,89.368-89.369S243.294,0,194.017,0z M194.017,156.527c-17.939,0-34.804-6.986-47.488-19.671
+            c-12.684-12.684-19.67-29.55-19.67-47.488c0-37.032,30.127-67.159,67.158-67.159s67.158,30.126,67.158,67.159
+            C261.175,126.4,231.048,156.527,194.017,156.527z"></path>
+        </svg>
+        Suchen
+    </span>
+</label>
+<div class="mobileMenuBg">
+    <!-- Leichteprache und Gebaerdensprache -->
+    <ul class="right mobileService">
+        <li class="navServiceGS">
+            <a href="https://www.bsi.bund.de/DE/Service/Gebaerdensprache/gebaerdensprache_node.html">
+                <span class="aural">Gebärdensprache</span>
+            </a>
+        </li>
+        <li class="navServiceLS">
+            <a href="https://www.bsi.bund.de/DE/Service/LeichteSprache/leichtesprache_node.html">
+                <span class="aural">Leichte Sprache</span>
+            </a>
+        </li>
+    </ul>
+    <!-- Leichteprache und Gebaerdensprache  ENDE-->
+</div>
+<div class="mobieNavigation">
+    <ul class="menufixed">
+        <li class="head blue">Menü</li>
+        <li class="search blue">
+            
+<form name="searchService" action="SiteGlobals/Forms/Suche/BSI/ServicesucheMobil_Formular.html" method="get" enctype="application/x-www-form-urlencoded">
+  
+  <input name="nn" value="6610622" type="hidden">
+  <input name="resourceId" value="6659132" type="hidden">
+  <input name="input_" value="6605576" type="hidden">
+  <input name="pageLocale" value="de" type="hidden">
+  <fieldset>
+    <p>
+            
+<span class="formLabel aural">
+  <label for="f6659132d6659068">Suchtext </label></span>
+<span class="formField">
+  <input id="f6659132d6659068" name="templateQueryString" title="Suchtext" placeholder="Suchbegriff" size="26" maxlength="100" type="text"></span>
+            
+  <input class="image" src="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/Servicesuche_Submit.png" id="f6659132d6659074" name="submit" alt="Suchen" title="Suchen" type="image">
+    </p>
+</fieldset>
+</form>
+        </li>
+    </ul>
+    <ul class="navList">
+        <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Home/home_node.html" title="Startseite">Start­sei­te</a></li>
+  <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/themen_node.html" title="Übersichtsseite Themen" class="has-childs">The­men</a><input id="sub-nav-triggers_6655636_1" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6655636_1"></label>
+                
+    <ul class="lvl2">
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Cyber-Sicherheit/cyber-sicherheit_node.html" title="Information zur Cyber-Sicherheit" class="has-childs">Cy­ber-Si­cher­heit</a><input id="sub-nav-triggers_6620972_2" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6620972_2"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Cyber-Sicherheit/Strategie/cs_Strategie_node.html" title="Strategien zur Stärkung der Cyber-Sicherheit" class="has-childs">Stra­te­gie</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Cyber-Sicherheit/Aktivitaeten/aktivitaeten_node.html" title="Aktivitäten und Initiativen zur Cyber-Sicherheit" class="has-childs">Ak­ti­vi­tä­ten und In­itia­ti­ven</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Cyber-Sicherheit/Gefaehrdungslage/cs_Gefaehrdungslage_node.html" title="Cyber-Gefährdungslage in Deutschland" class="has-childs">Ge­fähr­dungs­la­ge </a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Cyber-Sicherheit/Empfehlungen/empfehlungen_node.html" title="Empfehlungen" class="has-childs">Emp­feh­lun­gen</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Cyber-Sicherheit/Dienstleistungen/dienstleistungen_node.html" title="Vorgehensweisen / Dienstleistungen" class="has-childs">Vor­ge­hens­wei­sen / Dienst­leis­tun­gen</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Cyber-Sicherheit/Tools/tools_node.html" title="Tools" class="has-childs">Tools</a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/digitalegesellschaft_node.html" class="has-childs">Di­gi­ta­le Ge­sell­schaft</a><input id="sub-nav-triggers_6662668_9" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6662668_9"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/CloudComputing/CloudComputing_node.html" title="Cloud Computing" class="has-childs">Cloud Com­pu­ting</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/Biometrie/biometrie_node.html" title="Biometrie" class="has-childs">Bio­me­trie</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/ElektronischeAusweise/elektronischeausweise_node.html" title="Elektronische Ausweise" class="has-childs">Elek­tro­ni­sche Aus­wei­se</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/ElektronischeSignatur/elektronischesignatur_node.html" title="Elektronische Signatur" class="has-childs">Elek­tro­ni­sche Si­gna­tur</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/RadioFrequencyIdentification/radiofrequencyidentification_node.html" title="Radio Frequency Identification" class="has-childs"><abbr title="Ra­dio Fre­quen­cy Iden­ti­fi­ca­ti­on">RFID</abbr></a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/EGovernment/egovernment_node.html" title="E-Government" class="has-childs">E-Go­ver­n­ment</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/FreieSoftware/freiesoftware_node.html" title="Freie Software / Open Source Software" class="has-childs">Freie <span xml:lang="en-GB" lang="en-GB">Soft­ware / </span><abbr title="Open Sour­ce Soft­ware" xml:lang="en-GB" lang="en-GB">OSS</abbr></a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/SmartMeter/smartmeter_node.html" title="Smart Metering Systems – Intelligente Messsysteme" class="has-childs"><span xml:lang="en-GB" lang="en-GB">Smart Me­te­ring Sys­tems</span></a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/DrahtloseSensornetzwerke/DrahtloseSensornetzwerke_node.html" title="Drahtlose Sensornetzwerke" class="has-childs">Draht­lo­se Sen­sor­netz­wer­ke</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/Schadprogramme/schadprogramme_node.html" title="Schadprogramme" class="has-childs">Schad­programme</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/EBI/EBI_node.html" title="Erteilung von Bescheinigungen über die Übereinstimmung von Online-Sammelsystemen mit der Verordnung (EU) Nr. 211/2011" class="has-childs">Eu­ro­päi­sche Bür­ger­in­itia­ti­ve</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/eIDAS/eIDAS_node.html" title="eIDAS-Verordnung" class="has-childs">eI­DAS-Ver­ord­nung</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/eHealth/eHealth_node.html" title="eHealth" class="has-childs"><span xml:lang="en-GB" lang="en-GB">eHe­alth</span></a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Industrie_KRITIS/industriellesicherheit_node.html" title="Industrie und Kritische Infrastrukturen" class="has-childs">In­dus­trie und Kri­ti­sche In­fra­struk­tu­ren</a><input id="sub-nav-triggers_6662690_23" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6662690_23"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Industrie_KRITIS/IT-SiG/it_sig_node.html" title="IT-Sicherheitsgesetz" class="has-childs">IT-Si­cher­heits­ge­setz</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Industrie_KRITIS/Strategie/strategie_node.html" title="Strategie" class="has-childs">Stra­te­gie</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Industrie_KRITIS/Aktivitaeten/aktivitaeten_node.html" title="Aktivitäten und Initiativen" class="has-childs">Ak­ti­vi­tä­ten und In­itia­ti­ven</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Industrie_KRITIS/Gefaehrdungslage/gefaehrdungslage_node.html" title="Gefährdungslage" class="has-childs">Ge­fähr­dungs­la­ge</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Industrie_KRITIS/Empfehlungen/empfehlungen_node.html" title="Empfehlungen" class="has-childs">Emp­feh­lun­gen</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Industrie_KRITIS/Tools/tools_node.html" title="Tools" class="has-childs">Tools</a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/itgrundschutz_node.html" title="IT-Grundschutz" class="has-childs">IT-Grund­schutz</a><input id="sub-nav-triggers_6604654_30" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6604654_30"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/itgrundschutzkataloge_node.html" title="IT-Grundschutz-Kataloge" class="has-childs">IT-Grund­schutz-Ka­ta­lo­ge</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzStandards/ITGrundschutzStandards_node.html" title="BSI-Standards" class="has-childs">BSI-Stan­dards</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzSchulung/itgrundschutzschulung_node.html" title="IT-Grundschutz-Schulung" class="has-childs">IT-Grund­schutz-Schu­lung</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/GSTOOL/gstool_node.html" title="GSTOOL" class="has-childs">IT-Grund­schutz GSTOOL</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzZertifikat/itgrundschutzzertifikat_node.html" title="IT-Grundschutz-Zertifikat" class="has-childs">IT-Grund­schutz-Zer­ti­fi­kat</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzInternational/itgrundschutzinternational_node.html" title="IT-Grundschutz International" class="has-childs">IT-Grund­schutz In­ter­na­tio­nal</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzUeberblick/itgrundschutzUeberblick_node.html" title="IT-Grundschutz Überblick" class="has-childs">IT-Grund­schutz Über­blick</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzUeberblick/LeitfadenInformationssicherheit/leitfaden_node.html" title="Leitfaden Informationssicherheit" class="has-childs">Leit­fa­den In­for­ma­ti­ons­si­cher­heit</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/Ueberblickspapiere/Ueberblickspapiere_node.html" title="Überblickspapiere" class="has-childs">Über­blicks­pa­pie­re</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/IT-Grundschutz-Modernisierung/itgrundschutz_modernisierung_node.html" title="IT-Grundschutz Modernisierung" class="has-childs">Mo­der­ni­sie­rung IT-Grund­schutz</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Download/download_node.html" title="Download" class="has-childs">Dow­n­load</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzInternational/itgrundschutzinternational_node.html" title="IT-Grundschutz International" class="has-childs">IT-Grund­schutz In­ter­na­tio­nal</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Kontakt/kontakt_node.html" title="Kontakt" class="has-childs">Kon­takt</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Aktuell/Veranstaltungen/IT-Grundschutztag/IT-Grundschutztag_node.html" title="IT-Grundschutztag" class="has-childs">IT-Grund­schutz­tag</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Kryptotechnologie/kryptotechnologie_node.html" title="Kryptotechnologie" class="has-childs">Kryp­to­tech­no­lo­gie</a><input id="sub-nav-triggers_6662648_45" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6662648_45"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/SmartMeter/smartmeter_node.html" title="Smart Metering Systems – Intelligente Messsysteme" class="has-childs"><span xml:lang="en-GB" lang="en-GB">Smart Me­te­ring Sys­tems</span></a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Kryptotechnologie/SINA/sina_node.html" title="SINA" class="has-childs">SI­NA</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Kryptotechnologie/Chiasmus/chiasmus_node.html" class="has-childs">Chi­as­mus</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Kryptotechnologie/Protokollananlyse/protokollanalyse_node.html" title="Protokollanalyse" class="has-childs">Pro­to­kol­l­ana­ly­se</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Kryptotechnologie/Gpg4win/gpg4win_node.html" title="Gpg4win GNU Privacy Guard for Windows – E-Mail-Sicherheitspaket für Windows" class="has-childs"><abbr title="GNU Pri­va­cy Guard for Win­dows">Gpg4win</abbr></a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Kryptotechnologie/ElcroDat62/elcrodat62_node.html" title="ElcroDat 6-2" class="has-childs">El­cro­Dat 6-2</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Kryptotechnologie/Abstrahlsicherheit/abstrahlsicherheit_node.html" title="Abstrahlsicherheit" class="has-childs">Ab­strahl­si­cher­heit</a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Sicherheitsberatung/sicherheitsberatung_node.html" title="Sicherheitsberatung" class="has-childs">Si­cher­heits­be­ra­tung</a><input id="sub-nav-triggers_6622070_53" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6622070_53"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Sicherheitsberatung/Sicherheitsberatung/Sicherheitsberatung_node.html" title="Sicherheitsberatung" class="has-childs">Si­cher­heits­be­ra­tung</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Sicherheitsberatung/Geheimschutzberatung/Geheimschutzberatung_node.html" title="Materieller und IT-Geheimschutz" class="has-childs">Ma­te­ri­el­ler und IT-Ge­heim­schutz</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Sicherheitsberatung/Hochverfuegbarkeit/hochverfuegbarkeit_node.html" title="Infrastruktursicherheit" class="has-childs">In­fra­struk­tur­si­cher­heit</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Cyber-Sicherheit/Dienstleistungen/ISRevision/isrevision_node.html" title="IS-Revision" class="has-childs">IS-Re­vi­si­on</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Cyber-Sicherheit/Dienstleistungen/ISPentest_ISWebcheck/ispentest_iswebcheck_node.html" title="IS-Penetrationstest / IS-Webcheck" class="has-childs">IS-Pe­ne­tra­ti­ons­test / IS-Web­check</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Sicherheitsberatung/Arbeitshilfen/Arbeitshilfen_node.html" title="Arbeitshilfen" class="has-childs">Ar­beits­hil­fen</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Sicherheitsberatung/ZugelasseneProdukte/zugelasseneProdukte_node.html" title="Zulassung" class="has-childs">Zu­las­sung</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Sicherheitsberatung/Veranstaltungen/veranstaltungen_node.html" title="Veranstaltungen" class="has-childs">Ver­an­stal­tun­gen</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Sicherheitsberatung/Kontakt/kontakt_node.html" title="Kontakt Sicherheitsberatung" class="has-childs">Kon­takt</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/Sicherheitsberatung/InternerBereich/internerbereich_node.html" title="Interner Bereich" class="has-childs">In­ter­ner Be­reich</a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/StandardsKriterien/standardskriterien_node.html" class="has-childs">Stan­dards und Kri­te­ri­en</a><input id="sub-nav-triggers_6662676_64" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6662676_64"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/StandardsKriterien/ISi-Reihe/ISi-Reihe_node.html" title="BSI-Standards zur Internet-Sicherheit (ISi-Reihe)" class="has-childs">BSI-Stan­dards zur Internet-Si­cher­heit (ISi-Rei­he)</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/StandardsKriterien/FormaleMethoden/formalemethoden_node.html" title="Formale Methoden" class="has-childs">For­ma­le Me­tho­den</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/StandardsKriterien/Mindeststandards/mindeststandards_node.html" title="Mindeststandards" class="has-childs">Min­dest­stan­dards</a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ZertifizierungundAnerkennung/zertifizierungundanerkennung_node.html" title="Zertifizierung und Anerkennung" class="has-childs">Zer­ti­fi­zie­rung und An­er­ken­nung</a><input id="sub-nav-triggers_6620398_68" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6620398_68"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ZertifizierungundAnerkennung/Produktzertifizierung/Produktzertifizierung_node.html" title="Zertifizierung von Produkten" class="has-childs">Zer­ti­fi­zie­rung von Pro­duk­ten</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ZertifizierungundAnerkennung/Managementsystemzertifizierung/Managementsystemzertifizierung_node.html" title="Zertifizierung von Managementsystemen" class="has-childs">Zer­ti­fi­zie­rung von Ma­na­ge­ment­sys­te­men</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ZertifizierungundAnerkennung/Personenzertifizierung/personen_node.html" title="Kompetenzfeststellung und Zertifizierung von Personen" class="has-childs">Kom­pe­tenz­fest­stel­lung und Zer­ti­fi­zie­rung von Per­so­nen</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ZertifizierungundAnerkennung/Stellen/Stellen_node.html" title="Anerkennung von Stellen und Zertifizierung von IT-Sicherheitsdienstleistern" class="has-childs">An­er­ken­nung von Stel­len und Zer­ti­fi­zie­rung von IT-Si­cher­heits­dienst­leis­tern</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ZertifizierungundAnerkennung/Beschwerde/beschwerde_node.html" title="Verbesserung" class="has-childs">Ver­bes­se­rungs­ma­na­ge­ment</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ZertifizierungundAnerkennung/Listen/Listen_node.html" title="Listen" class="has-childs">Lis­ten</a>
+                </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/dasbsi_node.html" class="has-childs">Das BSI</a><input id="sub-nav-triggers_6655524_75" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6655524_75"></label>
+                
+    <ul class="lvl2">
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/DerPraesident/derpraesident_node.html" title="Informationen zum Präsidenten des BSI" class="has-childs">Der Prä­si­dent</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Aufgaben/aufgaben_node.html" title="Aufgaben und Organisationsübersicht des BSI" class="has-childs">Auf­ga­ben</a><input id="sub-nav-triggers_6627592_77" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6627592_77"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Aufgaben/AbteilungB/AbteilungB_node.html" title="Abteilung B Beratung für Staat, Wirtschaft und Gesellschaft" class="has-childs">Ab­tei­lung B</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Aufgaben/AbteilungCK/AbteilungCK_node.html" title="Abteilung CK Cyber-Sicherheit und Kritische Infrastrukturen" class="has-childs">Ab­tei­lung CK</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Aufgaben/AbteilungKT/AbteilungKT_node.html" title="Abteilung KT Krypto-Technologie" class="has-childs">Ab­tei­lung KT</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Aufgaben/AbteilungD/AbteilungD_node.html" title="Abteilung D Digitalisierung, Zertifizierung und Standardisierung" class="has-childs">Ab­tei­lung D</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Aufgaben/AbteilungZ/AbteilungZ_node.html" title="Abteilung Z Zentrale Aufgaben" class="has-childs">Ab­tei­lung Z</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/SharedDocs/FAQs/DE/BSI/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Aufgaben und Themen des BSI" class="has-childs">FAQ Auf­ga­ben des BSI</a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Gesetz/gesetz_node.html" title="Gesetz zur Stärkung der Sicherheit in der Informationstechnik des Bundes" class="has-childs">Ge­setz</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Leitbild/leitbild_node.html" title="Das Leitbild des Bundesamt für Sicherheit in der Informationstechnik" class="has-childs">Leit­bild</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Kosten/kosten_node.html" title="Kostenverordnung für Amtshandlungen des Bundesamtes für Sicherheit in der Informationstechnik" class="has-childs">BSI Kos­ten­ver­ord­nung</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Jobs/jobs_node.html" title="Das BSI als Arbeitgeber" class="has-childs">Das BSI als Ar­beit­ge­ber</a><input id="sub-nav-triggers_6627446_87" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6627446_87"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Jobs/Stellenangebote/stellenangebote_node.html" title="Stellenausschreibungen des BSI" class="has-childs">Stel­len­an­ge­bo­te</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Jobs/Diplomarbeiten/diplomarbeiten_node.html" title="Bachelor-, Diplom- und Masterarbeiten" class="has-childs">Ba­che­lor-, Di­plom- und Mas­ter­ar­bei­ten</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Jobs/Praktika/praktika_node.html" title="Praktika/Praxissemester" class="has-childs">Prak­ti­ka/Pra­xis­se­mes­ter</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Jobs/Ausbildung/ausbildung_node.html" title="Ausbildung" class="has-childs">Aus­bil­dung</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Einkauf/einkauf_node.html" title="Öffentliche Ausschreibungen des BSI" class="has-childs">Ver­ga­ben im BSI</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Historie/historie_node.html" title="Historie" class="has-childs">His­to­rie</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Wegbeschreibung/wegbeschreibung_node.html" title="Wegbeschreibungen zum BSI" class="has-childs">Weg­be­schrei­bun­gen</a></li>
+    </ul>
+  </li>
+  <li class="nav-item"><a href="https://www.bsi.bund.de/SiteGlobals/Forms/Suche/BSI/Pressemitteilungen/Pressearchivsuche_Formular.html?nn=6610622">Presse</a><input id="sub-nav-triggers_8195000_95" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_8195000_95"></label>
+                
+    <ul class="lvl2">
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Pressemitteilungen/pressemitteilungen_node.html" title="Pressemitteilungen" class="has-childs">Pres­se­mit­tei­lun­gen</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Pressearchiv/pressearchiv_node.html" title="Pressearchiv" class="has-childs">Pres­sear­chiv</a><input id="sub-nav-triggers_6624864_97" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6624864_97"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Pressearchiv/Presse2015/pressearchiv2015_node.html" title="Pressearchiv des BSI 2015" class="has-childs">Pres­se­mit­tei­lun­gen 2015</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Pressearchiv/Presse2014/pressearchiv2014_node.html" title="Pressearchiv des BSI 2014" class="has-childs">Pres­se­mit­tei­lun­gen 2014</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Pressearchiv/Presse2013/pressearchiv2013_node.html" title="Pressearchiv des BSI 2013" class="has-childs">Pres­se­mit­tei­lun­gen 2013</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Pressearchiv/Presse2012/pressearchiv2012_node.html" title="Pressearchiv des BSI 2012" class="has-childs">Pres­se­mit­tei­lun­gen 2012</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Kurzmeldungen/kurzmeldungen_node.html" title="Kurzmeldungen" class="has-childs">Kurz­mel­dun­gen</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Pressestelle/pressestelle_node.html" title="Pressestelle" class="has-childs">Pres­se­stel­le</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Presseverteiler/PV_node.html" title="Presseverteiler" class="has-childs">Pres­se­ver­tei­ler</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Mediathek/mediathek_node.html" title="Mediathek" class="has-childs">Me­dia­thek</a><input id="sub-nav-triggers_7680858_105" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_7680858_105"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Mediathek/Videos/videos_node.html" title="Videos" class="has-childs">Vi­deos</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Mediathek/Audios/audios_node.html" title="Audiobeiträge" class="has-childs">Au­dio­bei­trä­ge</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Presse/Bildmaterial/bildmaterial_node.html" title="Bildmaterial" class="has-childs">Bild­ma­te­ri­al</a></li>
+    </ul>
+  </li>
+  <li class="nav-item"><a href="https://www.bsi.bund.de/SiteGlobals/Forms/Suche/BSI/Publikationssuche/Publikationssuche_Formular.html?nn=6610622">Publikationen</a><input id="sub-nav-triggers_6655770_109" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6655770_109"></label>
+                
+    <ul class="lvl2">
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/StandardsKriterien/Mindeststandards/mindeststandards_node.html" title="Mindeststandards" class="has-childs">Min­dest­stan­dards</a><input id="sub-nav-triggers_6622430_110" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6622430_110"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/StandardsKriterien/Mindeststandards/SSL-TLS-Protokoll/SSL-TLS-Protokoll_node.html" title="Mindeststandard des BSI für den Einsatz des SSL/TLS-Protokolls durch Bundesbehörden" class="has-childs">SSL/TLS-Pro­to­koll</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Publikationen/Broschueren/broschueren_node.html" title="Broschüren" class="has-childs">Bro­schü­ren</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzStandards/ITGrundschutzStandards_node.html" title="BSI-Standards" class="has-childs">BSI-Stan­dards</a><input id="sub-nav-triggers_6604750_113" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6604750_113"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzStandards/Standard01/ITGStandard01_node.html" title="Managementsysteme für Informationssicherheit" class="has-childs">BSI-Stan­dard 100-1: Ma­na­ge­ment­sys­te­me für In­for­ma­ti­ons­si­cher­heit</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzStandards/Standard02/ITGStandard02_node.html" title="IT-Grundschutz-Vorgehensweise" class="has-childs">BSI-Stan­dard 100-2: <abbr title="In­for­ma­ti­ons­tech­nik" xml:lang="de" lang="de">IT</abbr>-Grund­schutz-Vor­ge­hens­wei­se</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzStandards/Standard03/ITGStandard03_node.html" title="Risikoanalyse auf der Basis von IT-Grundschutz" class="has-childs">BSI-Stan­dard 100-3: Ri­si­ko­ana­ly­se auf der Ba­sis von IT-Grund­schutz</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzStandards/Standard04/ITGStandard04_node.html" title="BSI-Standard 100-4: Notfallmanagement" class="has-childs">BSI-Stan­dard 100-4: Not­fall­ma­na­ge­ment</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/IT-Grundschutz-Modernisierung/GS_Standards/gs_standards_node.html" title="BSI-Standards (Drafts)" class="has-childs">BSI-Stan­dards (Drafts)</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Publikationen/BSI-Magazin/BSI-Magazin_node.html" title="BSI-Magazin" class="has-childs">BSI-Ma­ga­zin</a><input id="sub-nav-triggers_6624060_119" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6624060_119"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Publikationen/BSI-Magazin/Jahresberichte/jahresberichte_node.html" title="Jahresberichte" class="has-childs">Jah­res­be­rich­te</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Publikationen/Lageberichte/lageberichte_node.html" title="Lageberichte" class="has-childs">La­ge­be­rich­te</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Publikationen/BSIForumkes/forumkes_node.html" title="BSI-Forum in der &lt;kes&gt;" class="has-childs">BSI-Fo­rum in der &lt;kes&gt;</a></li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Publikationen/TechnischeRichtlinien/technischerichtlinien_node.html" title="Technische Richtlinien" class="has-childs">Tech­ni­sche Richt­li­ni­en</a><input id="sub-nav-triggers_6623812_123" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6623812_123"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Publikationen/TechnischeRichtlinien/traenderungen_node.html" title="Liste der Technische Richtlinien und Anhänge nach Änderungsdatum" class="has-childs">Lis­te TR nach Än­de­rungs­da­tum</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Publikationen/Studien/studien_node.html" title="Studien" class="has-childs">Stu­di­en</a></li>
+    </ul>
+  </li>
+  <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/service_node.html" class="has-childs">Ser­vice</a><input id="sub-nav-triggers_6655772_126" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6655772_126"></label>
+                
+    <ul class="lvl2">
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Aktuell/aktuelles_node.html" title="Aktuelles" class="has-childs">Ak­tu­el­les</a><input id="sub-nav-triggers_6623256_127" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6623256_127"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Aktuell/Cert_Bund_Meldungen/cert_bund_meldungen_node.html" class="has-childs">CERT Bund -Mel­dun­gen</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Aktuell/Newsletter/newsletter_node.html" title="Newsletter des BSI" class="has-childs">Newslet­ter</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Aktuell/Sociallinks/socialmedia_node.html" title="Social Media" class="has-childs">So­ci­al Me­dia</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Aktuell/RSS/rss_node.html" title="RSS-Feeds" class="has-childs">RSS</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/DasBSI/Jobs/Stellenangebote/stellenangebote_node.html" title="Stellenausschreibungen des BSI" class="has-childs">Stel­len­an­ge­bo­te</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Aktuell/Veranstaltungen/veranstaltungen_node.html" title="Veranstaltungen" class="has-childs">Ver­an­stal­tun­gen</a><input id="sub-nav-triggers_6600506_133" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6600506_133"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Aktuell/Veranstaltungen/Jahresuebersicht/jahresuebersicht_node.html" title="Veranstaltungen" class="has-childs">Jah­res­über­sicht</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Aktuell/Veranstaltungen/IT-Sicherheitskongress/IT-Sicherheitskongress_node.html" title="15. Deutscher IT-Sicherheitskongress" class="has-childs">Deut­scher IT-Si­cher­heits­kon­gress</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Aktuell/Veranstaltungen/IT-Grundschutztag/IT-Grundschutztag_node.html" title="IT-Grundschutztag" class="has-childs">IT-Grund­schutz­tag</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/faq_node.html" title="Häufig gestellte Fragen und Antworten" class="has-childs">FAQ</a><input id="sub-nav-triggers_6627686_137" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6627686_137"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/BSI-Aufgaben/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Aufgaben und Themen des BSI" class="has-childs">Auf­ga­ben des BSI</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/AllgemeineFragen/faq_node.html" title="Häufig gestellte Fragen und Antworten zum BSI" class="has-childs">All­ge­mei­ne Fra­gen</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/IT-Sicherheitsgesetz/faq_node.html" title="Fragen und Antworten zum Inkrafttreten des IT-Sicherheitsgesetzes" class="has-childs">IT-Si­cher­heits­ge­setz</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/Meldepflicht/faq_node.html" title="Häufig gestellte Fragen für Betreiber Kritischer Infrastrukturen zur Meldepflicht nach IT-Sicherheitsgesetz" class="has-childs">Fra­gen zur Mel­de­pflicht </a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/Personalausweis/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Personalausweis" class="has-childs">Per­so­nal­aus­weis</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/ElektrSIgnatur/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Elektronische Signatur" class="has-childs">Elek­tro­ni­sche Si­gna­tur</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/CERTBUND/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Computer Emergency Response Team-BUND" class="has-childs">CERT-BUND</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/ComputerViren/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Computerviren" class="has-childs">Com­pu­ter­vi­ren</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/DatenschutzrechtlicheFragen/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Datenschutzrechtliche Fragen" class="has-childs">Da­ten­schutz­recht­li­che Fra­gen</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/EvaluierungundZulassung/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Evaluierung und Zulassung" class="has-childs">Eva­lu­ie­rung und Zu­las­sung</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/ITGrundschutz/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema IT-Grundschutz" class="has-childs">IT-Grund­schutz</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/GSTOOL/faq_node.html" title="Fragen und Antworten zum GSTOOL" class="has-childs">GSTOOL</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/IS-Revision/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema IS-Revision" class="has-childs">IS-Re­vi­si­on</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/Lauschabwehr/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Lauschabwehr" class="has-childs">Lausch­ab­wehr</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/Mobilfunk/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Mobilfunk" class="has-childs">Mo­bil­funk</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/PersonalFirewall/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Personal Firewall" class="has-childs">Per­so­nal Fi­re­wall</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/SpamEMails/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Personal Spam E-Mails" class="has-childs">Spam E-Mails</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/StraftatenimInternet/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Straftaten im Internet" class="has-childs">Straf­ta­ten im Internet</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/Zertifizierung/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema Zertifizierung" class="has-childs">Zer­ti­fi­zie­rung</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/SmartMeter/faq_node.html" title="Fragen und Antworten zum Themenbereich der TR-03109-6 Smart Meter Gateway Administration" class="has-childs">Smart Me­ter Gate­way Ad­mi­nis­tra­ti­on</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/FAQ/IS-Revision/faq_node.html" title="Häufig gestellte Fragen und Antworten zum Thema IS-Revision" class="has-childs">IS-Re­vi­si­on</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Kontakt/kontakt_node.html" class="has-childs">Kon­takt</a><input id="sub-nav-triggers_6655766_159" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6655766_159"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Kontakt/Kontakt_weitere/kontakt_weitere_node.html" title="Kontakte zu ausgewählten Themen" class="has-childs">Kon­tak­te zu aus­ge­wähl­ten The­men</a></li>
+          <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Kontakt/Ombudsperson/ombuds_node.html" title="Ombudsperson" class="has-childs">Om­buds­per­son</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi.bund.de/DE/Service/Wegbeschreibung/wegbeschreibung_node.html" title="Wegbeschreibungen zum BSI" class="has-childs">Weg­be­schrei­bun­gen</a></li>
+    </ul>
+  </li>
+        <li class="nav-item Tree blue">
+            <a title="Switch to english website" class="languageLink lang_en" href="https://www.bsi.bund.de/EN/TheBSI/thebsi_node.html" xml:lang="en" hreflang="en" lang="en">English</a>
+        </li>
+        <li class="nav-item Tree blue">
+            <a href="https://www.bsi.bund.de/DE/Service/Kontakt/kontakt_node.html">Kon­takt</a>
+        </li>
+        <li class="nav-item Tree blue">
+            <a href="https://www.bsi.bund.de/Login/Login/login_node.html" title="Login" class="">Login</a>
+        </li>
+        <li class="nav-item navServiceLS blue">
+            <a href="https://www.bsi.bund.de/DE/Service/LeichteSprache/leichtesprache_node.html" title="Leichte Sprache">Leich­te Spra­che</a>
+        </li>
+        <li class="nav-item navServiceGS blue">
+            <a href="https://www.bsi.bund.de/DE/Service/Gebaerdensprache/gebaerdensprache_node.html" title="Gebärdensprache">Ge­bär­den­spra­che</a>
+        </li>
+    </ul>
+</div>
+<!--  Ende Modul mobile Navigation -->
+
+<div id="wrapperOuter" class="site-wrap">
+  <div id="wrapperInner">
+    <a id="Start"></a>
+    <h1 class="aural">Bundesamt für Sicherheit in der Informationstechnik</h1>
+    <p class="navSkip">
+      <em>Springe direkt zu:</em>
+    </p>
+    <ul class="navSkip">
+      <li><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Inhalt/_content/m/m04/m04223.html?nn=6610622#content">Inhalt</a></li>
+      <li><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Inhalt/_content/m/m04/m04223.html?nn=6610622#navPrimary">Hauptmenü</a></li>
+      <li><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Inhalt/_content/m/m04/m04223.html?nn=6610622#search">Suche</a></li>
+    </ul>    <div id="wrapperDivisions">
+      <div id="header">
+        <div class="wrapperBranding row ">
+          <div id="navServiceMeta" class="large-12">
+             <h2 class="aural">Servicemenü</h2>
+
+<ul><li id="navServiceLS"><a href="https://www.bsi.bund.de/DE/Service/LeichteSprache/leichtesprache_node.html" title="Leichte Sprache">Leich­te Spra­che</a></li><li id="navServiceGS"><a href="https://www.bsi.bund.de/DE/Service/Gebaerdensprache/gebaerdensprache_node.html" title="Gebärdensprache">Ge­bär­den­spra­che</a></li><li><a title="Switch to english website" class="languageLink lang_en" href="https://www.bsi.bund.de/EN/TheBSI/thebsi_node.html" xml:lang="en" hreflang="en" lang="en">English</a></li><li><a href="https://www.bsi.bund.de/DE/Service/Kontakt/kontakt_node.html">Kon­takt</a></li><li><a href="https://www.bsi.bund.de/Login/Login/login_node.html" title="Login" class="virgin">Login</a></li></ul>
+          </div>        </div>
+        <div class="row ">
+           <div class="medium-3 small-6 logo columns">
+              <p><a href="https://www.bsi.bund.de/DE/Home/home_node.html" id="anfang" title="Zur Startseite"><img src="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/logo.png" alt="Government Site Builder Standardlösung (Link zur Startseite)"></a></p>
+           </div>
+           <div id="search" class="large-3 columns">
+             <h2 class="aural">Suche</h2>
+
+<form name="searchService" action="SiteGlobals/Forms/Suche/BSI/Servicesuche_Formular.html" method="get" enctype="application/x-www-form-urlencoded">
+  
+  <input name="nn" value="6610622" type="hidden">
+  <input name="resourceId" value="6655290" type="hidden">
+  <input name="input_" value="6605576" type="hidden">
+  <input name="pageLocale" value="de" type="hidden">
+  <fieldset>
+    <p>
+            
+<span class="formLabel aural">
+  <label for="f6655290d6659068">Suchtext </label></span>
+<span class="formField">
+  <input id="f6655290d6659068" name="templateQueryString" title="Suchtext" placeholder="Suchbegriff" size="26" maxlength="100" type="text"></span>
+            
+  <input class="image" src="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/Servicesuche_Submit.png" id="f6655290d6659074" name="submit" alt="Suchen" title="Suchen" type="image">
+    </p>
+</fieldset>
+</form>
+
+            </div>        </div>
+        <div id="navPrimary">
+          <h2 class="aural">Hauptmenü</h2>
+
+<ul>
+  <li class="topinpath">
+    <div class="" id="n-1">
+      <h3><em><a href="https://www.bsi.bund.de/DE/Themen/themen_node.html" title="Übersichtsseite Themen">The­men</a></em></h3>
+      <h4 class="aural">Unternavigationspunkte</h4>
+      <div class="menu">
+        <div class="menu-box">
+          <ul class="large-block-grid-3">
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/Themen/Cyber-Sicherheit/cyber-sicherheit_node.html" title="Information zur Cyber-Sicherheit" class="iconLink">Cy­ber-Si­cher­heit</a></li>
+                <li><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/digitalegesellschaft_node.html" class="iconLink">Di­gi­ta­le Ge­sell­schaft</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Themen/Industrie_KRITIS/industriellesicherheit_node.html" title="Industrie und Kritische Infrastrukturen" class="iconLink">In­dus­trie und Kri­ti­sche In­fra­struk­tu­ren</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/itgrundschutz_node.html" title="IT-Grundschutz" class="iconLink">IT-Grund­schutz</a></li>
+                <li><a href="https://www.bsi.bund.de/DE/Themen/Kryptotechnologie/kryptotechnologie_node.html" title="Kryptotechnologie" class="iconLink">Kryp­to­tech­no­lo­gie</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Themen/Sicherheitsberatung/sicherheitsberatung_node.html" title="Sicherheitsberatung" class="iconLink">Si­cher­heits­be­ra­tung</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/Themen/StandardsKriterien/standardskriterien_node.html" class="iconLink">Stan­dards und Kri­te­ri­en</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Themen/ZertifizierungundAnerkennung/zertifizierungundanerkennung_node.html" title="Zertifizierung und Anerkennung" class="iconLink">Zer­ti­fi­zie­rung und An­er­ken­nung</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="" id="n-2">
+      <h3><a href="https://www.bsi.bund.de/DE/DasBSI/dasbsi_node.html">Das BSI</a></h3>
+      <h4 class="aural">Unternavigationspunkte</h4>
+      <div class="menu">
+        <div class="menu-box">
+          <ul class="large-block-grid-3">
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/DasBSI/DerPraesident/derpraesident_node.html" title="Informationen zum Präsidenten des BSI" class="iconLink">Der Prä­si­dent</a></li>
+                <li><a href="https://www.bsi.bund.de/DE/DasBSI/Aufgaben/aufgaben_node.html" title="Aufgaben und Organisationsübersicht des BSI" class="iconLink">Auf­ga­ben</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/DasBSI/Gesetz/gesetz_node.html" title="Gesetz zur Stärkung der Sicherheit in der Informationstechnik des Bundes" class="iconLink">Ge­setz</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/DasBSI/Leitbild/leitbild_node.html" title="Das Leitbild des Bundesamt für Sicherheit in der Informationstechnik" class="iconLink">Leit­bild</a></li>
+                <li><a href="https://www.bsi.bund.de/DE/DasBSI/Kosten/kosten_node.html" title="Kostenverordnung für Amtshandlungen des Bundesamtes für Sicherheit in der Informationstechnik" class="iconLink">BSI Kos­ten­ver­ord­nung</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/DasBSI/Jobs/jobs_node.html" title="Das BSI als Arbeitgeber" class="iconLink">Das BSI als Ar­beit­ge­ber</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/DasBSI/Einkauf/einkauf_node.html" title="Öffentliche Ausschreibungen des BSI" class="iconLink">Ver­ga­ben im BSI</a></li>
+                <li><a href="https://www.bsi.bund.de/DE/DasBSI/Historie/historie_node.html" title="Historie" class="iconLink">His­to­rie</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Service/Wegbeschreibung/wegbeschreibung_node.html" title="Wegbeschreibungen zum BSI" class="iconLink">Weg­be­schrei­bun­gen</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="" id="n-3">
+      <h3><a href="https://www.bsi.bund.de/SiteGlobals/Forms/Suche/BSI/Pressemitteilungen/Pressearchivsuche_Formular.html?nn=6610622">Presse</a></h3>
+      <h4 class="aural">Unternavigationspunkte</h4>
+      <div class="menu">
+        <div class="menu-box">
+          <ul class="large-block-grid-3">
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/Presse/Pressemitteilungen/pressemitteilungen_node.html" title="Pressemitteilungen" class="iconLink">Pres­se­mit­tei­lun­gen</a></li>
+                <li><a href="https://www.bsi.bund.de/DE/Presse/Pressearchiv/pressearchiv_node.html" title="Pressearchiv" class="iconLink">Pres­sear­chiv</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Presse/Kurzmeldungen/kurzmeldungen_node.html" title="Kurzmeldungen" class="iconLink">Kurz­mel­dun­gen</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/Presse/Pressestelle/pressestelle_node.html" title="Pressestelle" class="iconLink">Pres­se­stel­le</a></li>
+                <li><a href="https://www.bsi.bund.de/DE/Presse/Presseverteiler/PV_node.html" title="Presseverteiler" class="iconLink">Pres­se­ver­tei­ler</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Presse/Mediathek/mediathek_node.html" title="Mediathek" class="iconLink">Me­dia­thek</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Presse/Bildmaterial/bildmaterial_node.html" title="Bildmaterial" class="iconLink">Bild­ma­te­ri­al</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="" id="n-4">
+      <h3><a href="https://www.bsi.bund.de/SiteGlobals/Forms/Suche/BSI/Publikationssuche/Publikationssuche_Formular.html?nn=6610622">Publikationen</a></h3>
+      <h4 class="aural">Unternavigationspunkte</h4>
+      <div class="menu">
+        <div class="menu-box">
+          <ul class="large-block-grid-3">
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/Themen/StandardsKriterien/Mindeststandards/mindeststandards_node.html" title="Mindeststandards" class="iconLink">Min­dest­stan­dards</a></li>
+                <li><a href="https://www.bsi.bund.de/DE/Publikationen/Broschueren/broschueren_node.html" title="Broschüren" class="iconLink">Bro­schü­ren</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzStandards/ITGrundschutzStandards_node.html" title="BSI-Standards" class="iconLink">BSI-Stan­dards</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/Publikationen/BSI-Magazin/BSI-Magazin_node.html" title="BSI-Magazin" class="iconLink">BSI-Ma­ga­zin</a></li>
+                <li><a href="https://www.bsi.bund.de/DE/Publikationen/Lageberichte/lageberichte_node.html" title="Lageberichte" class="iconLink">La­ge­be­rich­te</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Publikationen/BSIForumkes/forumkes_node.html" title="BSI-Forum in der &lt;kes&gt;" class="iconLink">BSI-Fo­rum in der &lt;kes&gt;</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/Publikationen/TechnischeRichtlinien/technischerichtlinien_node.html" title="Technische Richtlinien" class="iconLink">Tech­ni­sche Richt­li­ni­en</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Publikationen/Studien/studien_node.html" title="Studien" class="iconLink">Stu­di­en</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="mod" id="n-5">
+      <h3><a href="https://www.bsi.bund.de/DE/Service/service_node.html">Ser­vice</a></h3>
+      <h4 class="aural">Unternavigationspunkte</h4>
+      <div class="menu">
+        <div class="menu-box">
+          <ul class="large-block-grid-3">
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/Service/Aktuell/aktuelles_node.html" title="Aktuelles" class="iconLink">Ak­tu­el­les</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Service/Aktuell/Veranstaltungen/veranstaltungen_node.html" title="Veranstaltungen" class="iconLink">Ver­an­stal­tun­gen</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi.bund.de/DE/Service/FAQ/faq_node.html" title="Häufig gestellte Fragen und Antworten" class="iconLink">FAQ</a></li>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Service/Kontakt/kontakt_node.html" class="iconLink">Kon­takt</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li class="last"><a href="https://www.bsi.bund.de/DE/Service/Wegbeschreibung/wegbeschreibung_node.html" title="Wegbeschreibungen zum BSI" class="iconLink">Weg­be­schrei­bun­gen</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+        </div>      </div>
+  
+<div id="wrapperBreadcrumbs">
+  <div id="navBreadcrumbsVertical"><ol><li class="level1 last"><span><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/itgrundschutz_node.html">IT-Grundschutz </a></span></li></ol>
+  </div>
+</div>
+
+
+
+ <div id="main" class="row moduleGutter">
+  <div id="content" class="large-8 columns">
+   
+<h1 class="isFirstInSlot">
+M 4.223 Integration von Proxy-Servern in das Sicherheitsgateway
+</h1>
+
+<p><strong>Verantwortlich für Initiierung:</strong> IT-Sicherheitsbeauftragter, Leiter IT</p>
+
+
+<p><strong>Verantwortlich für Umsetzung:</strong> Administrator</p>
+
+<h3>HTTPS-Sicherheitsproxy</h3>
+
+
+<p>Der
+<abbr title="Hypertext Transfer Protocol Secure" xml:lang="en-GB" lang="en-GB">HTTPS</abbr>
+-Proxy sollte den eintreffenden Datenverkehr entschlüsseln, der 
+Inhaltefilterung zuleiten und daraufhin den Datenverkehr wieder 
+verschlüsseln. Der temporär unverschlüsselte Datenverkehr kann auf 
+unerwünschte Inhalte untersucht werden.</p>
+
+
+<p>Im besten Fall wird ein HTTPS-Proxy vom eingesetzten Application 
+Level Gateway (ALG) unterstützt. Dann bietet sich der in Abbildung 
+dargestellte, relativ einfache Aufbau an. Hier wird der 
+Übersichtlichkeit halber der Fall betrachtet, in dem der Datenverkehr 
+auf einer eigenen Komponente gefiltert wird. Vielfach wird die Filterung
+ jedoch vom Hersteller bereits in das ALG integriert.</p>
+
+<p class="picture linksOhne normal" style="width: 1447px;"><span class="wrapper"><img src="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/dm04223_01_e07.jpg" title="" alt=""></span>
+</p>
+
+<table><thead><tr>
+<th colspan="1" rowspan="1"><strong>Vorteile "HTTPS-Proxy auf ALG"</strong></th>
+<th colspan="1" rowspan="1"><strong>Nachteile "HTTPS-Proxy auf ALG"</strong></th>
+</tr></thead><tbody><tr>
+<td colspan="1" rowspan="1">
+
+<ul><li>Einfache Einrichtung, da in der Regel Konfigurationsoberflächen zur Verfügung stehen.</li><li>Gegenüber
+ einem externen HTTPS-Proxy ergibt sich eine geringere Anzahl an 
+Kommunikationsbeziehungen zwischen den an der SSL-Entschlüsselung und an
+ der Inhaltefilterung beteiligten Modulen (da die Daten das ALG nicht 
+verlassen müssen).</li></ul>
+</td>
+<td colspan="1" rowspan="1">
+
+<ul><li>Die Komplexität von SSL begünstigt Fehler bei der Entwicklung 
+der Proxy-Software, was zu Schwachstellen führen kann. Durch Fehler in 
+der SSL-Implementierung kann dann möglicherweise das gesamte ALG 
+übernommen werden.</li><li>Der maximale Datendurchsatz wird aufgrund der
+ rechenintensiven Schlüsselverarbeitung und der daraus resultierenden 
+verstärkten Auslastung des ALG verringert.</li></ul>
+</td>
+</tr></tbody>
+
+
+</table>
+
+<p>Tabelle: Vorteile und Nachteile von HTTPS-Proxy auf ALG</p>
+
+
+<p>Falls das ALG keinen HTTPS-Proxy anbietet, ergibt sich der in der 
+Abbildung dargestellte Aufbau. Der HTTPS-Proxy befindet sich hier in 
+einer eigenen
+<abbr title="Demilitarisierte Zone " xml:lang="de" lang="de">DMZ</abbr>
+. In der Abbildung ist abweichend von der vorhergehenden Abbildung der 
+Fall dargestellt, bei dem Schadinhalte vom ALG gefiltert werden.</p>
+
+<p class="picture linksOhne normal" style="width: 1447px;"><span class="wrapper"><img src="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/dm04223_02_e07.jpg" title="" alt=""></span>
+</p>
+
+<table><thead><tr>
+<th colspan="1" rowspan="1"><strong>Vorteile "HTTPS-Proxy in DMZ"</strong></th>
+<th colspan="1" rowspan="1"><strong>Nachteile "HTTPS-Proxy in DMZ"</strong></th>
+</tr></thead><tbody><tr>
+<td colspan="1" rowspan="1">
+
+<ul><li>Die Produktauswahl ist unabhängig vom ALG möglich.</li><li>Entlastung des ALGs, da die rechenintensive Schlüsselverwaltung auf einem eigenen Rechner stattfindet. </li></ul>
+</td>
+<td colspan="1" rowspan="1">
+
+<ul><li>Auf dem ALG müssen mehrere Proxies eingerichtet werden.</li><li>Fehlkonfigurationen werden aufgrund der komplexen Kommunikationsbeziehungen der beteiligten Komponenten begünstigt.</li><li>Erhöhte
+ Latenzzeiten gegenüber einem auf dem ALG integrierten HTTPS-Proxy beim 
+Abruf von Daten, da mehrere TCP- bzw. UDP-Verbindungen zwischen den 
+einzelnen Modulen aufgebaut werden müssen.</li></ul>
+</td>
+</tr></tbody>
+
+
+</table>
+
+<p>Tabelle: Vorteile und Nachteile von HTTPS-Proxy in DMZ</p>
+
+
+<p>Die Stärke der Verschlüsselung innerhalb des vertrauenswürdigen 
+Netzes könnte bei beiden vorgestellten Lösungen dem Schutzbedarf und der
+ Vertrauenswürdigkeit der Teilnehmer angepasst werden, unter Umständen 
+kann hier zur Steigerung der Performance auf eine Verschlüsselung im 
+vertrauenswürdigen Netz verzichtet werden oder ein weniger 
+rechenintensives, schwächeres Verschlüsselungsverfahren eingesetzt 
+werden.</p>
+
+<h3>Caching-Proxy</h3>
+
+
+<p>Bei der Nutzung von Diensten könnte der Zugriff auf das nicht-vertrauenswürdige Netz auf bestimmte Proxies (
+<abbr title="zum Beispiel" xml:lang="de" lang="de">z. B.</abbr>
+Caching-Proxy für
+<abbr title="Hypertext Transfer Protocol " xml:lang="en-GB" lang="en-GB">HTTP</abbr>
+) beschränkt werden. Die Clients können den ("Zwangs-") Proxy nicht umgehen, um nach außen zu kommunizieren, da die
+<abbr title="Internet Protocol " xml:lang="en-GB" lang="en-GB">IP</abbr>
+-Adresse des Clients vom Sicherheitsgateway abgewiesen wird (nur die 
+IP-Adresse des Caching-Proxy wird vom Sicherheitsgateway akzeptiert).</p>
+
+<table><thead><tr>
+<th colspan="1" rowspan="1"><strong>Vorteile von ("Zwangs-") Caching-Proxies</strong></th>
+<th colspan="1" rowspan="1"><strong>Nachteile von ("Zwangs-") Caching-Proxies</strong></th>
+</tr></thead><tbody><tr>
+<td colspan="1" rowspan="1">
+
+<ul><li>Umfangreiche Möglichkeiten zur Protokollierung des 
+HTTP-Verkehrs, falls nur ein einstufiges Sicherheitsgateway verwendet 
+wird (bestehend aus einem Paketfilter).</li><li>Erweiterte 
+Filtermöglichkeiten, falls nur ein einstufiger Aufbau bestehend aus 
+einem Paketfilter eingesetzt wird. Mit einem Caching-Proxy lassen sich 
+beispielsweise filtern:<br>
+
+
+<ul><li>Cookies,</li><li>URLs,</li><li>HTTP-Referrer,</li><li>HTTP-Via und</li><li>HTTP-Server.</li></ul>
+</li><li>Reduzierung des übertragenen Datenvolumens aufgrund der Caching-Funktionalität. </li></ul>
+
+Anmerkung: In der Regel werden Caching-Proxies nicht unter 
+Sicherheitsaspekten entwickelt. Ein dedizierter Sicherheitsproxy sollte 
+den Caching-Proxies nach Möglichkeit vorgezogen werden.<br>
+</td>
+<td colspan="1" rowspan="1">
+
+<ul><li>Kompletter Ausfall von HTTP/HTTPS bei Ausfall des Proxies. Eine 
+vorübergehende Inbetriebnahme unter Verzicht auf den Proxy erfordert 
+umfangreiche Konfigurationsarbeiten (die Sperrlisten auf dem Paketfilter
+ müssen geändert werden und die Proxyeinstellungen der Clients müssen 
+angepasst werden, falls der Caching-Proxy nicht transparent betrieben 
+wurde). In der Regel ist deshalb eine redundante Auslegung des Proxies 
+notwendig.</li></ul>
+</td>
+</tr></tbody>
+
+
+</table>
+
+<p>Tabelle: Vorteile und Nachteile von Zwangs-Caching-Proxies</p>
+
+<h3>Reverse Proxy</h3>
+
+
+<p>"Reverse Proxies" werden im Zusammenhang mit der Bereitstellung von 
+(Web-) Servern auch zur Erreichung folgender Sicherheitsziele verwendet:</p>
+
+
+<ul><li>Einschränkung der Kommunikationsverbindungen, die aus dem 
+nicht-vertrauenswürdigen Netz kommend über einen Sicherheitsproxy 
+geleitet werden müssen. Dadurch wird die Administration des 
+Sicherheitsgateways erleichtert und die Wahrscheinlichkeit von 
+Fehlkonfigurationen verringert.</li><li>Verschleierung der Identität des
+ Webservers (mehrere, zur Lastverteilung genutzte Web-Server erscheinen 
+vom nicht-vertrauenswürdigen Netz aus gesehen unter einer IP-Adresse).</li><li>Abfangen
+ von Fehlermeldungen des Webservers, die einem Angreifer Hinweise zur 
+Kompromittierung des Systems liefern könnten (eigentlich handelt es sich
+ hierbei um einen Workaround, da der Webserver dieses Problem selber 
+abfangen sollte).</li><li>Zusätzliche Abschottung des Webservers, d. h. 
+ein Angreifer kann u. U. die Informationen einer Transaktion mitlesen, 
+aber keinen Zugriff auf den Webserver erlangen.</li><li>Abkoppelung des IP-Stacks des Servers vom nicht-vertrauenswürdigen Netz.</li><li>Filterung unerwünschter, aus dem nicht-vertrauenswürdigen Netz stammender Anfragen an den Webserver.</li><li>Erhöhung der Verfügbarkeit aufgrund von Lastverteilung und Lastminderung durch Caching.</li></ul>
+
+
+<p>In der folgenden Abbildung ist eine Situation dargestellt, in der 
+zwei Server zum Zugriff aus dem nicht-vertrauenswürdigen Netz 
+bereitgestellt werden. In dem abgebildeten Szenario müssen zwei 
+Kommunikationsverbindungen über das ALG und den externen Paketfilter 
+hinweg freigeschaltet werden.</p>
+
+<p class="picture linksOhne normal" style="width: 1447px;"><span class="wrapper"><img src="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/dm04223_03_e07.jpg" title="" alt=""></span>
+</p>
+
+
+<p>Die in der vorigen Abbildung dargestellten Kommunikationsbeziehungen 
+lassen sich mit Hilfe eines Reverse Proxy reduzieren. In Abbildung ist 
+aus dem nicht-vertrauenswürdigen Netz nur der Zugriff auf den Reverse 
+Proxy gestattet, Server 1 und 2 sind vor Zugriff gesperrt. Auf beide 
+Server kann nur der Reverse Proxy zugreifen.</p>
+
+<p class="picture linksOhne normal" style="width: 1447px;"><span class="wrapper"><img src="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/dm04223_04_e07.jpg" title="" alt=""></span>
+</p>
+
+
+<p>Zur Erhöhung der Serversicherheit können die Server auch in einer 
+eigenen DMZ betrieben werden, wo sie durch einen Sicherheitsproxy vom 
+Reverse Proxy getrennt werden. Die Übernahme eines Servers wird 
+hierdurch zusätzlich erschwert, allerdings erhöht sich die Anzahl der 
+Kommunikationsbeziehungen über das ALG.</p>
+
+<h2>Prüffragen:</h2>
+
+
+<ul>
+<li>
+
+<p>Betrifft den Einsatz eines Reverse-Proxy: Existieren Maßnahmen bei Ausfall des Reverse-Proxy?</p>
+
+</li><li>
+
+<p>Entspricht der Einsatz der Proxies den Sicherheitsvorgaben der Organisation?</p>
+
+</li><li>
+
+<p>Betrifft den Einsatz eines Caching-Proxy: Deckt sich der Einsatz des 
+Caching-Proxy mit den Vorgaben der Sicherheitsrichtlinien der 
+Organisation?</p>
+
+</li><li>
+
+<p>Betrifft den Einsatz eines Caching-Proxy: Existieren Maßnahmen bei Ausfall des Caching-Proxy?</p>
+
+</li><li>
+
+<p>Existieren Maßnahmen die bei Ausfall eines Proxies getroffen werden?</p>
+
+</li><li>
+
+<p>Betrifft den Einsatz eines Reverse-Proxy: Deckt sich die Umsetzung 
+des Reverse-Proxy mit den Anforderungen der Sicherheitsvorgaben der 
+Organisation?</p>
+
+</li></ul>
+
+
+<p><strong>Stand: 13. EL Stand 2013</strong></p>
+
+<div class="sectionRelated"></div>
+  </div>
+    <div id="supplement" class="large-4 columns">
+        <div id="navSecondary">
+      <h2><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/itgrundschutzkataloge_node.html" title="IT-Grundschutz-Kataloge">IT-Grund­schutz-Ka­ta­lo­ge</a></h2>
+<div class="navMain">
+    <ul>
+      <li class="first "><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Download/download_node.html" title="Download">Dow­n­load</a>
+
+</li>
+      <li class=" "><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Hilfsmittel/hilfsmittel_node.html" title="Hilfsmittel">Hilfs­mit­tel</a>
+
+</li>
+      <li class=" "><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Bezugsquellen/bezugsquellen_node.html" title="Bezugsquellen">Be­zugs­quel­len</a>
+
+</li>
+      <li class=" "><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/RegistrierungNewsletter/registrierungnewsletter_node.html" title="Registrierung / Newsletter">Re­gis­trie­rung / Newslet­ter</a>
+
+</li>
+      <li class=" "><a href="https://www.bsi.bund.de/DE/Service/Aktuell/Veranstaltungen/IT-Grundschutztag/IT-Grundschutztag_node.html" title="IT-Grundschutztag">IT-Grund­schutz­tag</a>
+
+</li>
+      <li class="last "><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzInternational/itgrundschutzinternational_node.html" title="IT-Grundschutz International">IT-Grund­schutz In­ter­na­tio­nal</a>
+
+</li>
+    </ul></div>
+        </div>    </div> </div>
+
+
+<div id="wrapper-socials" class="secondary-color">
+              <div class="row">
+                  <div class="small-12">
+                     <span class="share"><p>Seite teilen</p>
+</span>
+                      <ul class="socialmedia-bar" style="display: none;">
+                        <li class="socialmedia soc_facebook">
+
+
+            <a href="http://www.facebook.com/sharer.php?u=https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Inhalt/_content/m/m04/m04223" target="_blank">Facebook</a>
+                            
+                       </li>
+                        <li class="socialmedia soc_twitter">
+
+
+            <a href="http://twitter.com/home?status=https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Inhalt/_content/m/m04/m04223" target="_blank">Twitter</a>
+                            
+                       </li>
+                        <li class="socialmedia soc_google">
+
+
+            <a href="https://plus.google.com/share?url=https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Inhalt/_content/m/m04/m04223" target="_blank">Google+</a>
+                            
+                       </li>
+                        <li class="socialmedia soc_xing">
+
+
+            <a href="https://www.xing.com/social_plugins/share/new?h=1&amp;url=https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Inhalt/_content/m/m04/m04223" target="_blank">Xing</a>
+                            
+                       </li>
+                     </ul>
+                   </div>
+               </div>
+         </div>
+
+      <div id="navBreadcrumbs">
+        <p class="aural">Sie sind hier:</p>
+  <ol><li class="first"><a href="https://www.bsi.bund.de/DE/Home/home_node.html" title="Startseite">Startseite</a></li><li><a href="https://www.bsi.bund.de/DE/Themen/themen_node.html" title="Übersichtsseite Themen">Themen</a></li><li><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/itgrundschutz_node.html" title="IT-Grundschutz">IT-Grundschutz</a></li><li><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/itgrundschutzkataloge_node.html" title="IT-Grundschutz-Kataloge">IT-Grundschutz-Kataloge</a></li><li><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Inhalt/inhalt_node.html" title="Inhalt">Inhalt</a></li><li><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Inhalt/Massnahmenkataloge/massnahmenkataloge_node.html" title="Maßnahmenkataloge">Maßnahmenkataloge</a></li><li><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzKataloge/Inhalt/Massnahmenkataloge/M4HardwareundSoftware/m4hardwareundsoftware_node.html" title="M 4 Hardware und Software">M 4 Hardware und Software</a></li><li><strong>M 4.223 Integration von Proxy-Servern in das Sicherheitsgateway</strong></li></ol>
+      </div>
+      <div id="footer">
+  
+
+<div id="siteInfo" class="row show-for-large-up">
+
+    <ul class="large-block-grid-5">
+      <li>
+          <h3>Themen</h3>
+          <ul>
+            
+<li><a href="https://www.bsi.bund.de/DE/Themen/Cyber-Sicherheit/cyber-sicherheit_node.html" title="Information zur Cyber-Sicherheit">Cy­ber-Si­cher­heit</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/digitalegesellschaft_node.html">Di­gi­ta­le Ge­sell­schaft</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/itgrundschutz_node.html" title="IT-Grundschutz">IT-Grund­schutz</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Themen/Industrie_KRITIS/industriellesicherheit_node.html" title="Industrie und Kritische Infrastrukturen">In­dus­trie und Kri­ti­sche In­fra­struk­tu­ren</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Themen/Kryptotechnologie/kryptotechnologie_node.html" title="Kryptotechnologie">Kryp­to­tech­no­lo­gie</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Themen/Sicherheitsberatung/sicherheitsberatung_node.html" title="Sicherheitsberatung">Si­cher­heits­be­ra­tung</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Themen/StandardsKriterien/standardskriterien_node.html">Stan­dards und Kri­te­ri­en</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Themen/ZertifizierungundAnerkennung/zertifizierungundanerkennung_node.html" title="Zertifizierung und Anerkennung">Zer­ti­fi­zie­rung und An­er­ken­nung</a></li>
+          </ul>
+      </li>
+      <li>
+          <h3>Das BSI</h3>
+          <ul>
+            
+<li><a href="https://www.bsi.bund.de/DE/Publikationen/BSI-Magazin/BSI-Magazin_node.html" title="BSI-Magazin">BSI-Ma­ga­zin</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/DasBSI/Historie/historie_node.html" title="Historie">His­to­rie</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/DasBSI/Gesetz/gesetz_node.html" title="Gesetz zur Stärkung der Sicherheit in der Informationstechnik des Bundes">Ge­setz</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/DasBSI/Leitbild/leitbild_node.html" title="Das Leitbild des Bundesamt für Sicherheit in der Informationstechnik">Leit­bild</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/DasBSI/Aufgaben/aufgaben_node.html" title="Aufgaben und Organisationsübersicht des BSI">Auf­ga­ben</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/DasBSI/Kosten/kosten_node.html" title="Kostenverordnung für Amtshandlungen des Bundesamtes für Sicherheit in der Informationstechnik">BSI Kos­ten­ver­ord­nung</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/DasBSI/Jobs/jobs_node.html" title="Das BSI als Arbeitgeber">Das BSI als Ar­beit­ge­ber</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Service/Wegbeschreibung/wegbeschreibung_node.html" title="Wegbeschreibungen zum BSI">Weg­be­schrei­bun­gen</a></li>
+          </ul>
+      </li>
+      <li>
+          <h3>Presse</h3>
+          <ul>
+            
+<li><a href="https://www.bsi.bund.de/DE/Presse/Pressearchiv/pressearchiv_node.html" title="Pressearchiv">Pres­sear­chiv</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Presse/Pressestelle/pressestelle_node.html" title="Pressestelle">Pres­se­stel­le</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Presse/Presseverteiler/PV_node.html" title="Presseverteiler">Pres­se­ver­tei­ler</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Presse/Kurzmeldungen/kurzmeldungen_node.html" title="Kurzmeldungen">Kurz­mel­dun­gen</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Presse/Mediathek/mediathek_node.html" title="Mediathek">Me­dia­thek</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Presse/Bildmaterial/bildmaterial_node.html" title="Bildmaterial">Bild­ma­te­ri­al</a></li>
+          </ul>
+      </li>
+      <li>
+          <h3>Publikationen</h3>
+          <ul>
+            
+<li class="navPublikationen"><a href="https://www.bsi.bund.de/DE/Themen/StandardsKriterien/Mindeststandards/mindeststandards_node.html" title="Mindeststandards">Min­dest­stan­dards</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Publikationen/Broschueren/broschueren_node.html" title="Broschüren">Bro­schü­ren</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Themen/ITGrundschutz/ITGrundschutzStandards/ITGrundschutzStandards_node.html" title="BSI-Standards">BSI-Stan­dards</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Publikationen/BSI-Magazin/BSI-Magazin_node.html" title="BSI-Magazin">BSI-Ma­ga­zin</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Publikationen/Lageberichte/lageberichte_node.html" title="Lageberichte">La­ge­be­rich­te</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Publikationen/TechnischeRichtlinien/technischerichtlinien_node.html" title="Technische Richtlinien">Tech­ni­sche Richt­li­ni­en</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Publikationen/Studien/studien_node.html" title="Studien">Stu­di­en</a></li>
+          </ul>
+      </li>
+      <li>
+          <h3>Service</h3>
+          <ul>
+            
+<li><a href="https://www.bsi.bund.de/DE/Service/Aktuell/aktuelles_node.html" title="Aktuelles">Ak­tu­el­les</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Service/Aktuell/Sociallinks/socialmedia_node.html" title="Social Media">So­ci­al Me­dia</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Service/Aktuell/RSS/rss_node.html" title="RSS-Feeds">RSS</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/DasBSI/Jobs/Stellenangebote/stellenangebote_node.html" title="Stellenausschreibungen des BSI">Stel­len­an­ge­bo­te</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Service/FAQ/faq_node.html" title="Häufig gestellte Fragen und Antworten">FAQ</a></li>
+            
+<li><a href="https://www.bsi.bund.de/DE/Service/Wegbeschreibung/wegbeschreibung_node.html" title="Wegbeschreibungen zum BSI">Weg­be­schrei­bun­gen</a></li>
+          </ul>
+      </li>
+    </ul>
+</div>
+      </div>
+
+      <div class="row additionalFooter">
+  
+<div class="column large-8 footerLinks">
+      <ul>
+          
+<li class="small-5 medium-reset"><a href="https://www.bsi.bund.de/DE/Service/Datenschutz/datenschutz_node.html">Da­ten­schutz</a></li>
+          
+<li class="small-5 medium-reset"><a href="https://www.bsi.bund.de/DE/Service/Benutzerhinweise/benutzerhinweise_node.html">Be­nut­zer­hin­wei­se</a></li>
+          
+<li class="small-5 medium-reset"><a href="https://www.bsi.bund.de/DE/Service/Haftungsausschluss/haftungsausschluss_node.html">Haf­tungs­aus­schluss</a></li>
+          
+<li class="small-5 medium-reset"><a href="https://www.bsi.bund.de/DE/Service/Sitemap/sitemap_node.html">Über­sicht</a></li>
+          
+<li class="small-5 medium-reset"><a href="https://www.bsi.bund.de/DE/Service/Impressum/impressum_node.html">Im­pres­s­um</a></li>
+      </ul>
+</div>
+        <div class="column large-4 copyright">
+  <p>© Bundesamt für Sicherheit in der Informationstechnik</p>
+        </div>
+      </div>
+
+  <div class="aural"> 
+<a href="mailto:samp@bsi.bund.de"></a>
+<a href="mailto:sampv@bsi.bund.de"></a>
+<a href="mailto:sampc@bsi.bund.de"></a> 
+</div> 
+
+
+    </div>  </div></div>
+    <!-- Seite generiert am: Tue Nov 15 14:25:03 CET 2016 -->
+    <script type="text/javascript" src="BSI%20-%20M%204%20Ma%C3%9Fnahmenkatalog%20Hardware%20und%20Software%20-%20IT-Grundschutz-Kataloge%20-%20M%204.223%20Integration%20von%20Proxy-Servern%20in%20das%20Sicherheitsgateway-Dateien/global.js"></script>
+  
+</body></html>

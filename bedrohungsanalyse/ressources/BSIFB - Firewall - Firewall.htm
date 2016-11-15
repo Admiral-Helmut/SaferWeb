@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+     <!-- base href="https://www.bsi-fuer-buerger.de/" -->
+     <meta charset="UTF-8">
+     <title>BSIFB  -  Firewall - Firewall</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=1">
+     <meta name="generator" content="Government Site Builder">
+
+    <meta name="keywords" content="Schutzmaßnahmen, Firewall, Proxy Server, Personal Firewall,">
+     <!-- 
+        Realisiert mit dem Government Site Builder.
+        Die Content Management Lösung der Bundesverwaltung.
+        www.government-site-builder.de
+      -->
+     <link rel="canonical" href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Firewall/firewall.html"><span>@media print {#ghostery-purple-box {display:none !important}}</span>
+     <link rel="copyright" href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Impressum/impressum_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" type="text/html" title="Impressum">
+     <link rel="glossary" href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Glossar/glossar_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" type="text/html" title="Glossar">
+     <link rel="start" href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Home/home_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" type="text/html" title="Homepage">
+     <link rel="contents" href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Sitemap/sitemap_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" type="text/html" title="Übersicht">
+     <link rel="search" href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Suche/suche_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" type="text/html" title="Suche">
+
+     <link rel="shortcut icon" href="https://www.bsi-fuer-buerger.de/SiteGlobals/Frontend/Images/BSIFB/favicon.ico;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?__blob=normal&amp;v=3" type="image/ico">
+
+
+<link rel="stylesheet" href="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/normalize.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/_libs.css" type="text/css">
+<link rel="stylesheet" href="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/addon_foundation.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/small.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/medium.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/large.css" type="text/css" media="projection, screen, handheld">
+<!--[if IE 9]><link rel="stylesheet"  href="SiteGlobals/Frontend/Styles/BSI/addon_iefix_9.css;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?v=2" type="text/css" /><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="SiteGlobals/Frontend/Styles/BSI/addon_iefix.css;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?v=2" type="text/css" /><![endif]-->
+<link rel="stylesheet" href="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/addon_print.css" type="text/css" media="print">
+
+<link rel="stylesheet" href="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/addon_materna.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/addon_extension.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/addon_seiteteilen.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/styles_additional.css" type="text/css" media="projection, screen, handheld">
+<link rel="stylesheet" href="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/styles_additional_preview.css" type="text/css" media="projection, screen, handheld">
+
+
+
+  </head>
+  <body class="gsb startseite lang-de fixed js-on">
+
+
+<!--  Modul mobile Navigation -->
+<input id="nav-trigger" class="nav-trigger" type="checkbox">
+<label tabindex="0" for="nav-trigger">
+    <span class="navigationButton">
+        <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve"><rect width="30" height="6"></rect>
+            <rect y="24" width="30" height="6"></rect>
+            <rect y="12" width="30" height="6"></rect>
+        </svg>
+        Menü
+    </span>
+    <span class="searchButton">
+        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="283.385" height="285" viewBox="0 0 283.385 285" overflow="visible" enable-background="new 0 0 283.385 285" xml:space="preserve">
+        <path fill="#373737" d="M194.017,0c-49.278,0-89.369,40.091-89.369,89.369c0,21.212,7.435,40.719,19.827,56.061l-15.63,15.632
+            c-7.119-1.896-15.021-0.072-20.604,5.511l-81.989,81.99c-8.336,8.336-8.336,21.851,0,30.187c8.335,8.335,21.85,8.335,30.185,0
+            l81.991-81.99c5.582-5.583,7.407-13.486,5.511-20.604l15.823-15.823c15.055,11.537,33.867,18.406,54.256,18.406
+            c49.277,0,89.368-40.091,89.368-89.369S243.294,0,194.017,0z M194.017,156.527c-17.939,0-34.804-6.986-47.488-19.671
+            c-12.684-12.684-19.67-29.55-19.67-47.488c0-37.032,30.127-67.159,67.158-67.159s67.158,30.126,67.158,67.159
+            C261.175,126.4,231.048,156.527,194.017,156.527z"></path>
+        </svg>
+        Suchen
+    </span>
+</label>
+<div class="mobileMenuBg">
+    <!-- Leichteprache und Gebaerdensprache -->
+    <ul class="right mobileService">
+        <li class="navServiceGS">
+            <a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Gebaerdensprache/Gebaerdensprache_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369">
+                <span class="aural">Gebärdensprache</span>
+            </a>
+        </li>
+        <li class="navServiceLS">
+            <a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/LeichteSprache/leichteSprache_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369">
+                <span class="aural">Leichte Sprache</span>
+            </a>
+        </li>
+    </ul>
+    <!-- Leichteprache und Gebaerdensprache  ENDE-->
+</div>
+<div class="mobieNavigation">
+    <ul class="menufixed">
+        <li class="head blue">Menü</li>
+        <li class="search blue">
+            
+<form name="searchService" action="SiteGlobals/Forms/Suche/BSIFB/ServicesucheMobil_Formular.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" method="get" enctype="application/x-www-form-urlencoded">
+  
+  <input name="nn" value="6596214" type="hidden">
+  <input name="resourceId" value="6759822" type="hidden">
+  <input name="input_" value="6596882" type="hidden">
+  <input name="pageLocale" value="de" type="hidden">
+  <fieldset>
+    <p>
+            
+<span class="formLabel aural">
+  <label for="f6759822d6659068">Suchtext </label></span>
+<span class="formField">
+  <input id="f6759822d6659068" name="templateQueryString" title="Suchtext" placeholder="Suchbegriff" size="26" maxlength="100" type="text"></span>
+            
+  <input class="image" src="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/Servicesuche_Submit.png" id="f6759822d6659074" name="submit" alt="Suchen" title="Suchen" type="image">
+    </p>
+</fieldset>
+</form>
+        </li>
+    </ul>
+    <ul class="navList">
+        <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Home/home_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Startseite">Start­sei­te</a></li>
+  <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/risiken_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Welche Risiken begegnen Ihnen im Netz?" accesskey="a" class="has-childs">Ri­si­ken</a><input id="sub-nav-triggers_6599774_1" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6599774_1"></label>
+                
+    <ul class="lvl2">
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/BotNetze/botnetze_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Botnetze" class="has-childs">Bot­net­ze</a></li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/DoS/dos_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="DoS - Denial of Service" class="has-childs">DoS - De­ni­al of Ser­vice</a><input id="sub-nav-triggers_6596794_3" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6596794_3"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/DoS/DDoS/ddos_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Distributed Denial of Service" class="has-childs">Dis­tri­bu­ted De­ni­al of Ser­vice</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/FalscheAntivirensoftware/falscheantivirensoftware_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Falsche Antivirensoftware" class="has-childs">Falsche An­ti­vi­ren<span xml:lang="en-gb" lang="en-gb">soft­ware</span></a></li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Hacker/hacker_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Hacker" class="has-childs">Ha­cker</a></li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Schadprogramme/schadprogramme_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schadprogramme" class="has-childs">Schad­programme</a><input id="sub-nav-triggers_6597908_7" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597908_7"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Schadprogramme/Viren/viren_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Viren" class="has-childs">Vi­ren</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Schadprogramme/Wuermer/wuermer_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Würmer" class="has-childs">Wür­mer</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Schadprogramme/TrojanischePferde/trojanischepferde_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Trojanische Pferde / Ransomware" class="has-childs">Tro­ja­ni­sche Pfer­de / Ran­som­wa­re</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Schadprogramme/Spyware/spyware_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Spyware" class="has-childs">Spy­wa­re</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Schadprogramme/Android/android_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Android-Malware" class="has-childs">An­dro­id-Mal­wa­re</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Schadprogramme/Infektionsbeseitigung/infektionsbeseitigung_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Infektionsbeseitigung" class="has-childs">Infektions­beseitigung</a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/SpamPhishingCo/spamPhishingCo_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Spam, Phishing &amp; Co" class="has-childs">Spam, Phis­hing &amp; Co</a><input id="sub-nav-triggers_6696704_14" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6696704_14"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/SpamPhishingCo/Spam/spam_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Spam" class="has-childs">Spam</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/SpamPhishingCo/Phishing/phishing_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Phishing" class="has-childs">Phis­hing</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/SpamPhishingCo/Hoax/hoax_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Hoax" class="has-childs">Hoax</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/SpamPhishingCo/GefaelschteAbsenderadressen/gefaelschteabsenderadressen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Gefälschte Absenderadressen" class="has-childs">Gefälschte Absenderadressen</a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/PUP/pup_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Potenziell unerwünschte Programme" class="has-childs">Po­ten­zi­ell un­er­wünsch­te Pro­gram­me</a><input id="sub-nav-triggers_6692728_19" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6692728_19"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/PUP/Schutz/pup_schutz_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schutzmaßnahmen" class="has-childs">Schutz­maß­nah­men</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/ID-Diebstahl/id-diebstahl_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Identitätsdiebstahl" class="has-childs">Iden­ti­täts­dieb­stahl</a><input id="sub-nav-triggers_6692612_21" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6692612_21"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/ID-Diebstahl/Schutzmassnahmen/id-dieb_schutz_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schutz vor Identitätsdiebstahl" class="has-childs">Schutz­mass­nah­men</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/ID-Diebstahl/Hilfe/Hilfe_Betroffene_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Hilfe für Betroffene" class="has-childs">Hil­fe für Be­trof­fe­ne</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Mobbing/mobbing_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Mobbing" class="has-childs">Mob­bing</a><input id="sub-nav-triggers_6692498_24" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6692498_24"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Mobbing/Mobbing_Schutz/mobbing_schutz_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schutzmaßnahmen" class="has-childs">Schutz­maß­nah­men</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Mobbing/Mobbing_Hilfe/mobbing_hilfe_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Hilfe für Betroffene" class="has-childs">Hil­fe für Be­trof­fe­ne</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Sicherheitsirrtuemer/sicherheitsirrtuemer_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Sicherheitsirrtümer" class="has-childs">Si­cher­heits­irr­tü­mer</a></li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Kostenfallen/kostenfallen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kostenfallen" class="has-childs">Kos­ten­fal­len</a></li>
+    </ul>
+  </li>
+  <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/empfehlungen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Empfehlungen" accesskey="b" class="has-childs">Emp­feh­lun­gen</a><input id="sub-nav-triggers_6599190_29" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6599190_29"></label>
+                
+    <ul class="lvl2">
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/BasisschutzGeraet/BasisschutzGeraet_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Basisschutz für Computer &amp; Smartphone" class="has-childs">Basisschutz für Computer &amp; Smart­pho­ne</a><input id="sub-nav-triggers_6695684_30" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6695684_30"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/BasisschutzGeraet/EinrichtungComputer/EinrichtungComputer_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Ihren Computer sicher einrichten" class="has-childs">Ih­ren Computer sicher ein­rich­ten</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/BasisschutzGeraet/EinrichtungMobileGeraete/EinrichtungMobileGeraete_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schutz für Smartphone &amp; Co." class="has-childs">Schutz für <span xml:lang="en-GB" lang="en-GB">Smart­pho­ne</span> &amp; Co.</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungWLAN-LAN/EinrichtungLAN-WLAN_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="LAN und WLAN sicher einrichten" class="has-childs">LAN und WLAN sicher ein­rich­ten</a><input id="sub-nav-triggers_6596812_33" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6596812_33"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungWLAN-LAN/Funktionsweise/funktionsweise_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Funktionsweise" class="has-childs">Funk­ti­ons­wei­se</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungWLAN-LAN/Sicherheitstipps/sicherheitstipps_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Sicherheitstipps" class="has-childs">Si­cher­heits­tipps</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungWLAN-LAN/WLAN/wlan_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Wireless Local Area Networks" class="has-childs"><abbr title="Wi­re­less Lo­cal Area Net­works">WLAN</abbr></a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/EinrichtungSoftware_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Einrichtung von Software" class="has-childs">Ih­re Soft­ware sicher ein­rich­ten</a><input id="sub-nav-triggers_6681470_37" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6681470_37"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/EinrichtungBrowser/derbrowser_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Der Browser" class="has-childs">Der <span xml:lang="en-gb" lang="en-gb">Brow­ser</span></a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/E-Mail/E-Mail_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="E-Mail-Programm" class="has-childs">E-Mail-Pro­gramm</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/EinrichtungMobileApps/MobileApps_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Apps auf mobilen Geräten" class="has-childs"><span xml:lang="en-GB" lang="en-GB">Ap­ps</span> auf mobilen Ge­rä­ten</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/updatePatchManagement_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Update- und Patchmanagement" class="has-childs"><span xml:lang="en-GB" lang="en-GB">Update- </span>und <span xml:lang="en-GB" lang="en-GB">Patchmanagement</span></a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/OpenSource/OpenSource_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Open Source FAQ" class="has-childs">Fra­gen &amp; Ant­wor­ten zu <span xml:lang="en-GB" lang="en-GB">Open Sour­ce Soft­ware</span></a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/VorabversionenBetriebssysteme/VorabversionenBetriebssystem_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Vorabversionen neuer Betriebssysteme" class="has-childs">Vor­ab­ver­sio­nen von Be­triebs­sys­te­men</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/schutzprogramme_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schutz- und Hilfsprogramme" class="has-childs">Schutz- und Hilfs­pro­gram­me</a><input id="sub-nav-triggers_6597904_44" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597904_44"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Virenschutzprogramme/virenschutzprogramme_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Virenschutzprogramme" class="has-childs">Vi­ren­schutz­pro­gram­me</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Firewall/firewall_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Firewall" class="has-childs">Fi­re­wall</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Pruefsummen/pruefsummen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Prüfsummencheck" class="has-childs">Prüf­sum­men­check</a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Passwoerter/passwoerter_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Passwörter" class="has-childs">Pass­wör­ter</a><input id="sub-nav-triggers_6595794_48" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6595794_48"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Passwoerter/Umgang/umgang_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Umgang mit Passwörtern" class="has-childs">Um­gang mit Pass­wör­tern</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Benutzerkonten/benutzerkontennetzwerk_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Benutzerkonten " class="has-childs">Be­nut­zer­kon­ten </a><input id="sub-nav-triggers_6597902_50" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597902_50"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Benutzerkonten/PCMehrfachnutzung/pcmehrfachnutzung_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="PC-Mehrfachnutzung" class="has-childs">PC-Mehr­fach­nut­zung</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Benutzerkonten/Heimnetzwerke/heimnetzwerke_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Heimnetzwerke" class="has-childs">Heim­netz­wer­ke</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Verschluesselung/Verschluesselung_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Verschlüsselung" class="has-childs">Ver­schlüs­se­lung</a><input id="sub-nav-triggers_6682168_53" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6682168_53"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Verschluesselung/Datenverschluesselung/datenverschluesselung_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Datenverschlüsselung" class="has-childs">Daten­verschlüsselung</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Verschluesselung/Verschluesseltkommunizieren/verschluesselt_kommunizieren_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Verschlüsselt kommunizieren" class="has-childs">Ver­schlüs­selt kom­mu­ni­zie­ren</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Verschluesselung/VerschluesselungMobil/verschluesselungMobil_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Verschlüsselung auf mobilen Geräten" class="has-childs">Ver­schlüs­se­lung auf mobilen Ge­rä­ten</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Datensicherung/datensicherung_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Datensicherung" class="has-childs">Da­ten­si­che­rung</a><input id="sub-nav-triggers_6597650_57" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597650_57"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Datensicherung/Datenverlust/datenverlust_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Datenverlust" class="has-childs">Da­ten­ver­lust</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Datensicherung/WelcheDatenSichern/welchedatensichern_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Welche Daten sichern?" class="has-childs">Welche Da­ten si­chern?</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Datensicherung/Speichermedien/speichermedien_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Speichermedien" class="has-childs">Spei­cher­me­di­en</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Datensicherung/Sicherungsmethoden/sicherungsmethoden_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Methoden" class="has-childs">Me­tho­den</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Datensicherung/DatensicherungWindows/datensicherungWindows_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Datensicherung unter Windows" class="has-childs">Da­ten­si­che­rung un­ter Win­dows</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Datensicherung/DatensicherungLinux/datensicherungLinux_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Datensicherung unter Linux" class="has-childs">Da­ten­si­che­rung un­ter <span xml:lang="en-GB" lang="en-GB">Li­nux</span></a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/RichtigLoeschen/richtigloeschen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Daten richtig löschen" class="has-childs">Da­ten rich­tig lö­schen</a><input id="sub-nav-triggers_6597990_64" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597990_64"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/RichtigLoeschen/DBAN/dban_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Anleitung zur Nutzung von DBAN bzw. Parted-Magic" class="has-childs">Darik's Boot And Nu­ke</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Menschenverstand/menschenverstand_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Surfen Sie mit gesundem Menschenverstand" class="has-childs">Ge­sun­der Men­schen­ver­stand</a><input id="sub-nav-triggers_6596638_66" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6596638_66"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Menschenverstand/E-Mail/E-Mail_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="3-Sekunden-Sicherheits-Check" class="has-childs">3-Se­kun­den-Si­cher­heits-Check</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/digitaleGesellschaft_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Digitale Gesellschaft" accesskey="c" class="has-childs">Di­gi­ta­le Ge­sell­schaft</a><input id="sub-nav-triggers_6700314_68" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6700314_68"></label>
+                
+    <ul class="lvl2">
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/CloudComputing/cloudcomputing_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Cloud Computing" class="has-childs">Cloud Com­pu­ting</a><input id="sub-nav-triggers_6597668_69" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597668_69"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/CloudComputing/Grundlagenwissen/grundlagenwissen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Grundlagenwissen" class="has-childs">Grund­la­gen­wis­sen</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/CloudComputing/GefahrenRisiken/gefahrenrisiken_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Cloud: Risiken und Sicherheitstipps" class="has-childs">Cloud: Ri­si­ken und Si­cher­heits­tipps</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/SozialeNetze/sozialeNetze_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Soziale Netzwerke" class="has-childs">So­zia­le Netz­wer­ke</a><input id="sub-nav-triggers_6596246_72" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6596246_72"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/SozialeNetze/Sicherheitsrisiken/sicherheitsrisiken_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Sicherheitsrisiken" class="has-childs">Si­cher­heits­ri­si­ken</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/SozialeNetze/Schutzmassnahmen/Schutzmassnahmen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schutzmaßnahmen" class="has-childs">Schutz­maß­nah­men</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/SozialeNetze/Notfall/notfall_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Erste Hilfe im Notfall" class="has-childs">Ers­te Hil­fe im Not­fall</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/OnlineBanking/onlinebanking_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Online-Banking" class="has-childs">On­line-Ban­king</a><input id="sub-nav-triggers_6597030_76" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597030_76"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/OnlineBanking/SoFunktioniertDasOnlineBanking/so_funktioniert_online_banking_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="So funktioniert das Online-Banking" class="has-childs">So funk­tio­niert das On­line-Ban­king</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/OnlineBanking/GefahrenUndSicherheitsrisiken/gefahren_sicherheitsrisiken_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Gefahren und Sicherheitsrisiken" class="has-childs">Gefahren und Si­cher­heits­ri­si­ken</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/OnlineBanking/Sicherheitsmassnahmen/sicherheitsmassnahmen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Sicherheitsmaßnahmen" class="has-childs">Si­cher­heits­maß­nah­men</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/OnlineBanking/MobileBanking/mobileBanking_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Mobile Banking" class="has-childs"><span xml:lang="en-GB" lang="en-GB">Mo­bi­le Ban­king</span></a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/OnlineBanking/WasTunImErnstfall/ernstfall_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Was tun im Ernstfall?" class="has-childs">Was tun im Ernst­fall?</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/EinkaufenImInternet/einkaufeniminternet_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Einkaufen im Internet" class="has-childs">Einkaufen im Internet</a><input id="sub-nav-triggers_6597764_82" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597764_82"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/EinkaufenImInternet/BezahlenImInternet/BezahlenImInternet_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Bezahlen im Internet" class="has-childs">Be­zah­len im Internet</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/EinkaufenImInternet/Bezahlenmobil/bezahlen_mit_mob_Geraeten_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Bezahlen mit mobilen Geräten" class="has-childs">Be­zah­len mit mobilen Ge­rä­ten</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/EinkaufenImInternet/OnlineShoppingbeachten/OnlineShoppingbeachten_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Worauf beim Online-Einkauf zu achten ist" class="has-childs">Wor­auf beim <span xml:lang="en-GB" lang="en-GB">On­line-</span>Ein­kauf zu ach­ten ist</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/KommunikationUeberInternet/kommunikationInternet_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kommunikation über das Internet" class="has-childs">Kom­mu­ni­ka­ti­on über das Internet</a><input id="sub-nav-triggers_6597550_86" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597550_86"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/KommunikationUeberInternet/ChatAberSicher/chatabersicher_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Chat - aber sicher?" class="has-childs">Chat - aber sicher?</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/KommunikationUeberInternet/Messenger/instantMessenger_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Instant Messenger" class="has-childs">In­stant Mes­sen­ger</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/E-Mail/E-Mail_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="E-Mail-Programm" class="has-childs">E-Mail-Pro­gramm</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/KommunikationUeberInternet/De-Mail/de-mail_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="De-Mail" class="has-childs">De-Mail</a>
+                </li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/KommunikationUeberInternet/Internettelefonie/internettelefonie_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Internettelefonie" class="has-childs">In­ter­net­te­le­fo­nie</a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/DerStaatOnline/derstaatonline_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Der Staat online" class="has-childs">Der Staat on­line</a><input id="sub-nav-triggers_6597088_92" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597088_92"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/DerStaatOnline/TechnischeGrundlagen/technischegrundlagen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="E-Government nutzen" class="has-childs">E-Go­ver­n­ment nut­zen</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/DerStaatOnline/Checkliste/checkliste_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Checkliste" class="has-childs">Check­lis­te</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/DerStaatOnline/Sicherheit/sicherheit_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Sicherheit" class="has-childs">Si­cher­heit</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/DerStaatOnline/Personalausweis/Personalausweis_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Der Personalausweis" class="has-childs">Der Per­so­nal­aus­weis</a>
+                </li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/SmartTV/SmartTV_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Smart-TV" class="has-childs">Smart-TV</a></li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/FremdeWLAN/fremdeWLAN_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Öffentliche WLANs" class="has-childs">Öf­fent­li­che WLANs</a></li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Reisen/reisen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="IT-Sicherheit und Reisen" class="has-childs">IT-Si­cher­heit und Rei­sen</a><input id="sub-nav-triggers_6693808_99" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6693808_99"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Reisen/vorReisen/vorreisen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Vor der Reise" class="has-childs">Vor der Rei­se</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Reisen/waehrendReisen/waehrendreisen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Während der Reise" class="has-childs">Wäh­rend der Rei­se</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Reisen/nachReisen/nachreisen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Nach der Reise" class="has-childs">Nach der Rei­se</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/RechtImInternet/rechtiminternet_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Recht im Internet" class="has-childs">Recht im Internet</a><input id="sub-nav-triggers_6596444_103" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6596444_103"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/RechtImInternet/Rechtsprobleme/rechtsprobleme_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Rechtsprobleme" class="has-childs">Rechts­pro­ble­me</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/RechtImInternet/TippsUndGesetze/tippsundgesetze_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Tipps und Gesetze" class="has-childs">Tipps und Ge­set­ze</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Computerspiele/computerspiele_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Computerspiele" class="has-childs">Com­pu­ter­spie­le</a><input id="sub-nav-triggers_6597132_106" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597132_106"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Computerspiele/Sicherheitsfragen/sicherheitsfragen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Sicherheitsfragen" class="has-childs">Si­cher­heits­fra­gen</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Kinderschutz/kinderschutz_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kinderschutz" class="has-childs">Kin­der­schutz</a><input id="sub-nav-triggers_6596356_108" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6596356_108"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Kinderschutz/Gefahren/gefahren_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Gefahren" class="has-childs">Gefahren</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Kinderschutz/Checkliste/checkliste_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Grundlage für ein Gespräch zwischen Eltern/ Betreuungspersonen und Kindern" class="has-childs">El­tern-Kind-Ge­spräch</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Kinderschutz/Funktionsumfang/funktionsumfang_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Wie funktionieren Systeme zum Schutz von Kindern und Jugendlichen am Computer?" class="has-childs">Funk­ti­ons­um­fang Schutz­programme</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/service_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Service" accesskey="1" class="has-childs">Ser­vice</a><input id="sub-nav-triggers_6597870_112" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597870_112"></label>
+                
+    <ul class="lvl2">
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Aktuell/aktuell_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Aktuell" class="has-childs">Ak­tu­ell</a><input id="sub-nav-triggers_6598424_113" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6598424_113"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Aktuell/CERT/Sicherheitshinweise_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" class="has-childs">Si­cher­heits­hin­wei­se</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Aktuell/Informationen/informationen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Informationen" class="has-childs">In­for­ma­tio­nen</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Aktuell/Newsletter/Newsletter_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Newsletter" accesskey="1" class="has-childs">Newslet­ter</a></li>
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Aktuell/RSS/rss_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="RSS-Feeds" class="has-childs">RSS</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Kontakt/kontakt_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kontakt" class="has-childs">Kon­takt</a></li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Das_BSI/dasBSI_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Über das BSI" accesskey="1" class="has-childs">Über das BSI</a><input id="sub-nav-triggers_6597814_119" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6597814_119"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Das_BSI/wasnicht/BSIwasNicht_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Was das BSI nicht macht" accesskey="1" class="has-childs">Was das BSI nicht macht</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Mediathek/broschueren_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Broschüren" class="has-childs">Me­dia­thek</a><input id="sub-nav-triggers_6595768_121" class="sub-nav-trigger" type="checkbox"><label for="sub-nav-triggers_6595768_121"></label>
+                
+        <ul class="lvl3">
+          <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Mediathek/Videos/videos_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Videos" class="has-childs">Vi­deos</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Checklisten/checklisten_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Checklisten und Tipps" class="has-childs">Check­lis­ten und Tipps</a></li>
+      <li class="nav-item"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Glossar/glossar_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Glossar" class="has-childs">Glossar </a></li>
+    </ul>
+  </li>
+        <li class="nav-item Tree blue">
+            <a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Kontakt/kontakt_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kontakt">Kon­takt</a>
+        </li>
+        <li class="nav-item navServiceLS blue">
+            <a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/LeichteSprache/leichteSprache_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Die Internetseite BSI für Bürger einfach erklärt" accesskey="3">Leich­te Spra­che</a>
+        </li>
+        <li class="nav-item navServiceGS blue">
+            <a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Gebaerdensprache/Gebaerdensprache_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Gebärdensprache" accesskey="2">Ge­bär­den­spra­che</a>
+        </li>
+    </ul>
+</div>
+<!--  Ende Modul mobile Navigation -->
+<div id="wrapperOuter" class="site-wrap">
+  <div id="wrapperInner">
+    <a id="Start"></a>
+    <h1 class="aural">Bundesamt für Sicherheit in der Informationstechnik</h1>
+    <p class="navSkip">
+      <em>Springe direkt zu:</em>
+    </p>
+    <ul class="navSkip">
+      <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Firewall/firewall.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?nn=6596214#content">Inhalt</a></li>
+      <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Firewall/firewall.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?nn=6596214#navPrimary">Hauptmenü</a></li>
+      <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Firewall/firewall.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?nn=6596214#search">Suche</a></li>
+    </ul>    <div id="wrapperDivisions">
+      <div id="header">
+        <div class="wrapperBranding row mod">
+          <div id="navServiceMeta" class="large-10 columns">
+             <h2 class="aural">Servicemenü</h2>
+
+<ul><li id="navServiceLS"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/LeichteSprache/leichteSprache_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Die Internetseite BSI für Bürger einfach erklärt" accesskey="3">Leich­te Spra­che</a></li><li id="navServiceGS"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Gebaerdensprache/Gebaerdensprache_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Gebärdensprache" accesskey="2">Ge­bär­den­spra­che</a></li><li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Kontakt/kontakt_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kontakt">Kon­takt</a></li></ul>
+          </div>          <div id="search" class="large-2 columns">
+             <h2 class="aural">Suche</h2>
+
+<form name="searchService" action="SiteGlobals/Forms/Suche/BSIFB/Servicesuche_Formular.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" method="get" enctype="application/x-www-form-urlencoded">
+  
+  <input name="nn" value="6596214" type="hidden">
+  <input name="resourceId" value="6658436" type="hidden">
+  <input name="input_" value="6596882" type="hidden">
+  <input name="pageLocale" value="de" type="hidden">
+  <fieldset>
+    <p>
+            
+<span class="formLabel aural">
+  <label for="f6658436d6659068">Suchtext </label></span>
+<span class="formField">
+  <input id="f6658436d6659068" name="templateQueryString" title="Suchtext" placeholder="Suchbegriff" size="26" maxlength="100" type="text"></span>
+            
+  <input class="image" src="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/Servicesuche_Submit.png" id="f6658436d6659074" name="submit" alt="Suchen" title="Suchen" type="image">
+    </p>
+</fieldset>
+</form>
+          </div>        </div>
+        <div class="row mod">
+           <div class="medium-3 small-6 logo columns">
+              <p><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Home/home_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" id="anfang" title="Zur Startseite"><img src="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/logo.png" alt="Government Site Builder Standardlösung (Link zur Startseite)"></a></p>
+           </div>
+           <div class="medium-3 small-6 addlogo columns">
+              <p>
+                 <img alt="Dieses Dokument bestimmt, ob ein Zusatzlogo ausgegeben wird.
+Ein im Feld Wert eingehängtes Logo wird als Zusatzlogo ausgegeben.
+Ist das Feld Wert leer, so wird kein Zusatzlogo ausgegeben.
+Ablageoptionen:
+Wird dieses Dokument unterhalb des globalen Verzeichnisses &quot;_config&quot; abgelegt, so wird das Zusatzlogo auf allen Seiten ausgegeben.
+Um das Logo nur für bestimmte Bereiche auszugeben, kann das Konfigurationsdokument zusätzlich pfadabhängig abgelegt werden." src="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/AdditionalLogo.png">
+              </p>
+           </div>
+        </div>
+        <div id="navPrimary">
+          <h2 class="aural">Hauptmenü</h2>
+
+<ul>
+  <li>
+    <div class="" id="n-1">
+      <h3><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/risiken_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Welche Risiken begegnen Ihnen im Netz?" accesskey="a">Ri­si­ken</a></h3>
+      <h4 class="aural">Unternavigationspunkte</h4>
+      <div class="menu">
+        <div class="menu-box">
+          <ul class="large-block-grid-3">
+            <li>
+              <ul>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/BotNetze/botnetze_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Botnetze" class="iconLink">Bot­net­ze</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/DoS/dos_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="DoS - Denial of Service" class="iconLink">DoS - De­ni­al of Ser­vice</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/FalscheAntivirensoftware/falscheantivirensoftware_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Falsche Antivirensoftware" class="iconLink">Falsche An­ti­vi­ren<span xml:lang="en-gb" lang="en-gb">soft­ware</span></a></li>
+                <li class="last"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Hacker/hacker_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Hacker" class="iconLink">Ha­cker</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Schadprogramme/schadprogramme_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schadprogramme" class="iconLink">Schad­programme</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/SpamPhishingCo/spamPhishingCo_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Spam, Phishing &amp; Co" class="iconLink">Spam, Phis­hing &amp; Co</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/PUP/pup_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Potenziell unerwünschte Programme" class="iconLink">Po­ten­zi­ell un­er­wünsch­te Pro­gram­me</a></li>
+                <li class="last"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/ID-Diebstahl/id-diebstahl_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Identitätsdiebstahl" class="iconLink">Iden­ti­täts­dieb­stahl</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Mobbing/mobbing_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Mobbing" class="iconLink">Mob­bing</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Sicherheitsirrtuemer/sicherheitsirrtuemer_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Sicherheitsirrtümer" class="iconLink">Si­cher­heits­irr­tü­mer</a></li>
+                <li class="last"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Kostenfallen/kostenfallen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kostenfallen" class="iconLink">Kos­ten­fal­len</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="topinpath">
+    <div class="" id="n-2">
+      <h3><em><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/empfehlungen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Empfehlungen" accesskey="b">Emp­feh­lun­gen</a></em></h3>
+      <h4 class="aural">Unternavigationspunkte</h4>
+      <div class="menu">
+        <div class="menu-box">
+          <ul class="large-block-grid-3">
+            <li>
+              <ul>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/BasisschutzGeraet/BasisschutzGeraet_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Basisschutz für Computer &amp; Smartphone" class="iconLink">Basisschutz für Computer &amp; Smart­pho­ne</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungWLAN-LAN/EinrichtungLAN-WLAN_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="LAN und WLAN sicher einrichten" class="iconLink">LAN und WLAN sicher ein­rich­ten</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/EinrichtungSoftware_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Einrichtung von Software" class="iconLink">Ih­re Soft­ware sicher ein­rich­ten</a></li>
+                <li class="last"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/schutzprogramme_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schutz- und Hilfsprogramme" class="iconLink">Schutz- und Hilfs­pro­gram­me</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Passwoerter/passwoerter_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Passwörter" class="iconLink">Pass­wör­ter</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Benutzerkonten/benutzerkontennetzwerk_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Benutzerkonten " class="iconLink">Be­nut­zer­kon­ten </a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Verschluesselung/Verschluesselung_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Verschlüsselung" class="iconLink">Ver­schlüs­se­lung</a></li>
+                <li class="last"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Datensicherung/datensicherung_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Datensicherung" class="iconLink">Da­ten­si­che­rung</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/RichtigLoeschen/richtigloeschen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Daten richtig löschen" class="iconLink">Da­ten rich­tig lö­schen</a></li>
+                <li class="last"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Menschenverstand/menschenverstand_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Surfen Sie mit gesundem Menschenverstand" class="iconLink">Ge­sun­der Men­schen­ver­stand</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="" id="n-3">
+      <h3><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/digitaleGesellschaft_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Digitale Gesellschaft" accesskey="c">Di­gi­ta­le Ge­sell­schaft</a></h3>
+      <h4 class="aural">Unternavigationspunkte</h4>
+      <div class="menu">
+        <div class="menu-box">
+          <ul class="large-block-grid-3">
+            <li>
+              <ul>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/CloudComputing/cloudcomputing_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Cloud Computing" class="iconLink">Cloud Com­pu­ting</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/SozialeNetze/sozialeNetze_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Soziale Netzwerke" class="iconLink">So­zia­le Netz­wer­ke</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/OnlineBanking/onlinebanking_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Online-Banking" class="iconLink">On­line-Ban­king</a></li>
+                <li class="last"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/EinkaufenImInternet/einkaufeniminternet_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Einkaufen im Internet" class="iconLink">Einkaufen im Internet</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/KommunikationUeberInternet/kommunikationInternet_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kommunikation über das Internet" class="iconLink">Kom­mu­ni­ka­ti­on über das Internet</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/DerStaatOnline/derstaatonline_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Der Staat online" class="iconLink">Der Staat on­line</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/SmartTV/SmartTV_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Smart-TV" class="iconLink">Smart-TV</a></li>
+                <li class="last"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/FremdeWLAN/fremdeWLAN_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Öffentliche WLANs" class="iconLink">Öf­fent­li­che WLANs</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Reisen/reisen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="IT-Sicherheit und Reisen" class="iconLink">IT-Si­cher­heit und Rei­sen</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/RechtImInternet/rechtiminternet_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Recht im Internet" class="iconLink">Recht im Internet</a></li>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Computerspiele/computerspiele_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Computerspiele" class="iconLink">Com­pu­ter­spie­le</a></li>
+                <li class="last"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Kinderschutz/kinderschutz_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kinderschutz" class="iconLink">Kin­der­schutz</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="mod" id="n-4">
+      <h3><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/service_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Service" accesskey="1">Ser­vice</a></h3>
+      <h4 class="aural">Unternavigationspunkte</h4>
+      <div class="menu">
+        <div class="menu-box">
+          <ul class="large-block-grid-3">
+            <li>
+              <ul>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Aktuell/aktuell_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Aktuell" class="iconLink">Ak­tu­ell</a></li>
+                <li class="last"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Kontakt/kontakt_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kontakt" class="iconLink">Kon­takt</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Das_BSI/dasBSI_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Über das BSI" accesskey="1" class="iconLink">Über das BSI</a></li>
+                <li class="last"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Mediathek/broschueren_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Broschüren" class="iconLink">Me­dia­thek</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Checklisten/checklisten_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Checklisten und Tipps" class="iconLink">Check­lis­ten und Tipps</a></li>
+                <li class="last"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Glossar/glossar_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Glossar" class="iconLink">Glossar </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+        </div>      </div>  
+<div id="wrapperBreadcrumbs">
+  <div id="navBreadcrumbsVertical">
+    <ol>
+      <li class="level1  last"><span><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/schutzprogramme_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schutz- und Hilfsprogramme">Schutz- und Hilfsprogramme</a></span></li>
+    </ol>
+  </div>
+</div>
+
+
+ <div id="main" class="row moduleGutter">
+  <div id="content" class="large-8 columns">
+   
+<h1 class="isFirstInSlot">Firewall</h1><p>Die Aufgabe einer <span xml:lang="en-GB" lang="en-GB">Firewall</span> ist so ähnlich wie die einer Brandschutzmauer bei Häusern, deshalb heißt sie wohl auch so.<br>
+Die <span xml:lang="en-GB" lang="en-GB">Firewall</span> besteht aus <span xml:lang="en-GB" lang="en-GB">Hard</span>- und <span xml:lang="en-GB" lang="en-GB">Software</span>, die den <strong>Datenfluss zwischen dem internen Netzwerk und dem externen Netzwerk kontrolliert</strong>. Alle Daten, die das Netz verlassen werden ebenso überprüft, wie die, die hinein wollen.</p>
+
+<p><span xml:lang="en-GB" lang="en-GB">Firewalls</span> werden in der Regel von Unternehmen eingesetzt. Schließlich ist es da ganz besonders wichtig, dass die <span xml:lang="en-GB" lang="en-GB">Computer</span> nicht ungeschützt mit dem Internet verbunden sind. Mit Hilfe der <span xml:lang="en-GB" lang="en-GB">Firewall</span> müssen die Firmen nicht jeden einzelnen Arbeitsplatzrechner absichern, sondern nur die Rechner und <span xml:lang="en-GB" lang="en-GB">Server</span>,
+ die unmittelbar an das externe Netzwerk angeschlossen sind. Diese 
+Rechner werden so konfiguriert, dass sie die sie passierenden Daten 
+kontrollieren können. Die <span xml:lang="en-GB" lang="en-GB">Firewall</span> <strong>überprüft</strong> beispielsweise anhand der <a href="https://www.bsi-fuer-buerger.de/SharedDocs/Glossareintraege/DE/I/IP-Adresse.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" data-lightbox-href="SharedDocs/Glossareintraege/DE/I/IP-Adresse.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?view=renderLightbox" class="GlossarEntry"><abbr title="Internet Protocol" xml:lang="en-GB" lang="en-GB">IP</abbr>-Adresse IPv4, IPv6</a> des Rechners, ob das Datenpaket, das ins Netzwerk hinein will, überhaupt dazu berechtigt ist. Der <span xml:lang="en-GB" lang="en-GB">Firewall</span>-Administrator legt dafür Listen mit erlaubten Sendern (Adressen) an. Nur die Daten dieser Sender dürfen die Mauer passieren.</p>
+<div class="mejs-wrapper">
+  <video controls="controls" preload="none" data-reload-href="SharedDocs/Videos/DE/BSIFB/Sicherheitskompass_Regel4_mp4.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?view=renderEmbedded" data-options="startVolume:1;loop:false;alwaysShowControls:true" poster="/SharedDocs/Bilder/DE/Video/BSIfB/Sicherheitskompass/Regel4_player.jpg;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?__blob=normal&amp;v=1" height="358" width="637">
+    <source type="video/mp4" src="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/Regel_4-Firewall.mp4">
+    <object type="application/x-shockwave-flash" data="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/VideoPlayer.swf" height="358" width="637">
+      <param name="movie" value="/SiteGlobals/Functions/VideoPlayer/VideoPlayer.swf;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?__blob=value&amp;v=1">
+      <param name="allowFullScreen" value="true">
+      <img src="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/Regel4_player.jpg" title="Verwenden Sie eine Firewall." alt="Verwenden Sie eine Firewall.">
+    </object>
+  </video>
+</div><h2><a id="Pers_Firewall"></a><span xml:lang="en-GB" lang="en-GB">Personal Firewall</span></h2>
+
+<p>Im Prinzip haben die <span xml:lang="en-GB" lang="en-GB">Firewall</span> und die für den Privatgebrauch abgespeckte Version der <span xml:lang="en-GB" lang="en-GB">Personal Firewall</span> nicht mehr viel gemeinsam. Denn während bei der normalen <span xml:lang="en-GB" lang="en-GB">Firewall</span> viele Rechner durch einzelne ausgewählte geschützt werden, versucht sich der <abbr title="Personal Computer" xml:lang="en-GB" lang="en-GB">PC</abbr> bei der <span xml:lang="en-GB" lang="en-GB">Personal Firewall</span> selbst zu schützen. Wie es der Name schon sagt, läuft die <span xml:lang="en-GB" lang="en-GB">Personal Firewall</span> auf dem PC selbst. Sie soll genau wie die normale <span xml:lang="en-GB" lang="en-GB">Firewall</span> den Rechner vor Angriffen von außen schützen und auch verhindern, dass bestimmte Programme, zum Beispiel so genannte <a href="https://www.bsi-fuer-buerger.de/SharedDocs/Glossareintraege/DE/S/Spyware.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" data-lightbox-href="SharedDocs/Glossareintraege/DE/S/Spyware.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?view=renderLightbox" class="GlossarEntry"><span xml:lang="en-GB" lang="en-GB">Spyware</span> </a>,
+ Kontakt vom Rechner zum Internet aufnimmt. Dazu kontrolliert sie alle 
+Verbindungen in andere Netzwerke und überprüft sowohl die Anfragen ins 
+Internet als auch die Daten, die zum Rechner kommen.</p>
+
+<p>Eine <span xml:lang="en-GB" lang="en-GB">Personal Firewall</span> verfügt in der Regel über <strong>folgende Funktionalitäten</strong>:</p>
+
+<ul><li><strong>Paket Filter</strong>: Dieser kontrolliert, ob die Daten der an- und ausgehenden Pakete auch dem vom Benutzer festgelegten Regeln entsprechen.</li><li><strong>Sandboxing</strong>:
+ Dabei werden einzelne Programme in eine eingeschränkte Umgebung 
+"gesperrt". In diesem implementierten Schutzbereich werden Programme 
+ausgeführt. Falls es sich dabei um Schadsoftware handeln sollte, kann 
+sie aber keinen Schaden anrichten, da durch die Isolation der Rest des 
+Systems davon nicht beeinflusst wird.</li></ul>
+<h2>Konfiguration</h2>
+
+<p>Wie für jedes Programm ist auch hier entscheidend, wie Sie die <span xml:lang="en-GB" lang="en-GB">Firewall</span> bei der Installation konfigurieren:</p>
+
+<ul><li>Definieren Sie die Filterregeln so, dass nur die unbedingt notwendigen Zugriffe erlaubt sind.</li><li>Überprüfen Sie die Einstellungen regelmäßig.</li><li>Nicht benötigte <a href="https://www.bsi-fuer-buerger.de/SharedDocs/Glossareintraege/DE/P/Port.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" data-lightbox-href="SharedDocs/Glossareintraege/DE/P/Port.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?view=renderLightbox" class="GlossarEntry"><span xml:lang="en-GB" lang="en-GB">Port</span></a> müssen gesperrt werden.</li><li>Es sollte immer der aktuellste Virenscanner installiert sein und auch benutzt werden.</li><li>Patches sollten sofort nach Bekanntgabe von Sicherheitslücken eingespielt werden.</li><li>Sicherheitrelevante Ereignisse sollten protokolliert und ausgewertet werden.</li></ul>
+
+<p>Um die Warnungen Ihrer <span xml:lang="en-GB" lang="en-GB">Firewall</span> zu verstehen, sollten Sie die Bedeutung von IP-Adressen und Host-/Rechnernamen sowie die gemeldeten <span xml:lang="en-GB" lang="en-GB">Ports</span> kennen.</p>
+
+<p>Einige <span xml:lang="en-GB" lang="en-GB">Personal-Firewalls</span> 
+bieten die Möglichkeit einer selbstlernenden Konfiguration. Jede 
+Anwendung, die eine bestimmte Verbindung zum ersten Mal benötigt, wird 
+zunächst daran gehindert und die <span xml:lang="en-GB" lang="en-GB">Personal-Firewall</span>
+ fragt den Anwender, ob die Verbindung zugelassen werden soll. So wird 
+nach und nach ein Regelwerk aufgebaut. Vorteil dieser Konfiguration ist,
+ dass sie auch für technische Laien einigermaßen verständlich ist. Der 
+Nachteil ist jedoch, dass so schnell sicherheitskritische 
+Fehlkonfigurationen passieren können.<br>
+Zusätzlich sollten Sie auf die korrekte Konfiguration des <span xml:lang="en-GB" lang="en-GB">Web-Browsers</span>, des <span xml:lang="en-GB" lang="en-GB">Mail-Clients</span>, des Betriebssystems und der Anwendungen achten. Um die Warnungen Ihrer <span xml:lang="en-GB" lang="en-GB">Firewall</span> zu verstehen, müssen Sie u. a. Bescheid wissen über die Bedeutung von <abbr title="Internet Protocol" xml:lang="en-GB" lang="en-GB">IP</abbr>-Adressen und <span xml:lang="en-GB" lang="en-GB">Host</span>-/ Rechnernamen sowie über die gemeldeten oder auch angemahnten <abbr title="Transmission Control Protocol" xml:lang="en-GB" lang="en-GB">TCP</abbr>/<abbr title="User Datagram Protocol" xml:lang="en-GB" lang="en-GB">UDP</abbr>-<span xml:lang="en-GB" lang="en-GB">Ports</span>.</p>
+
+<p><strong>Generell gilt:</strong> IT-Sicherheit kann nicht durch eine einzelne <span xml:lang="en-GB" lang="en-GB">Software</span> erreicht werden, sondern ist immer nur durch ein Zusammenspiel von verschiedenen Faktoren möglich.</p>
+<h2><a id="Proxy"></a><span xml:lang="en-GB" lang="en-GB">Proxy-Server</span></h2>
+
+<p>In diesem Zusammenhang hört man auch oft den Begriff "<span xml:lang="en-GB" lang="en-GB">Proxy-Server</span>". Er <strong>kann Bestandteil einer <span xml:lang="en-GB" lang="en-GB">Firewall</span> sein</strong>. Eigentlich ist ein <span xml:lang="en-GB" lang="en-GB">Proxy-Server</span>
+ (z. B. für das WWW) ein Rechner, der Internet-Seiten, die von den 
+WWW-Nutzern häufig abgefragt werden, zwischenspeichert. Wenn der Surfer 
+eine Webseite anwählt, prüft der <span xml:lang="en-GB" lang="en-GB">Proxy-Server</span>, ob ihm die Daten bereits vorliegen. Ist das der Fall, bekommen der Surfer nur eine <strong>"Kopie"</strong>, die schneller übertragen werden kann als das "Original". Sind die Daten jedoch noch nicht vorhanden, lädt der <span xml:lang="en-GB" lang="en-GB">Proxy-Server</span> die entsprechende Seite, speichert sie selbst (im so genannten <span xml:lang="en-GB" lang="en-GB">Cache</span>) und sendet sie dem Surfer. Im Normalfall merkt der Surfer gar nicht, von wo die Daten kommen. Während normalerweise ein <span xml:lang="en-GB" lang="en-GB">Proxy-Server</span> lediglich den Zweck hat, die Zugriffe auf die abgerufenen Seiten zu beschleunigen, erfüllt er in einer <span xml:lang="en-GB" lang="en-GB">Firewall</span>-Anordnung
+ die Aufgabe, zu kontrollieren, ob die übertragenen Daten auch so sind, 
+wie sie sein sollen. Es ist auch möglich, bestimmte Teile nicht zu 
+übertragen. <a href="https://www.bsi-fuer-buerger.de/SharedDocs/Glossareintraege/DE/A/Aktive_Inhalte.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" data-lightbox-href="SharedDocs/Glossareintraege/DE/A/Aktive_Inhalte.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369?view=renderLightbox" class="GlossarEntry">Aktive Inhalte</a> in Web-Seiten können so beispielsweise schon in der <span xml:lang="en-GB" lang="en-GB">Firewall</span> blockiert werden.</p>
+<div class="sectionRelated"></div>
+  </div>
+    <div id="supplement" class="large-4 columns">
+        <div id="navSecondary">
+      <h2>Inhaltsverzeichnis</h2>
+<div class="navMain">
+    <ul>
+      <li class="first "><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Virenschutzprogramme/virenschutzprogramme_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Virenschutzprogramme">Vi­ren­schutz­pro­gram­me</a>
+
+</li>
+      <li class=" "><em><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Firewall/firewall_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Firewall">Fi­re­wall</a></em><span class="aural">:</span>
+
+</li>
+      <li class="last "><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Pruefsummen/pruefsummen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Prüfsummencheck">Prüf­sum­men­check</a>
+
+</li>
+    </ul></div>
+        </div>    </div> </div>
+
+
+<div id="wrapper-socials" class="secondary-color">
+              <div class="row">
+                  <div class="small-12">
+                     <span class="share"><p>Seite teilen</p>
+</span>
+                      <ul class="socialmedia-bar" style="display: none;">
+                        <li class="socialmedia soc_facebook">
+
+
+            <a href="http://www.facebook.com/sharer.php?u=https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Firewall/firewall" target="_blank">Facebook</a>
+                            
+                       </li>
+                        <li class="socialmedia soc_twitter">
+
+
+            <a href="http://twitter.com/home?status=https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Firewall/firewall" target="_blank">Twitter</a>
+                            
+                       </li>
+                        <li class="socialmedia soc_google">
+
+
+            <a href="https://plus.google.com/share?url=https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Firewall/firewall" target="_blank">Google+</a>
+                            
+                       </li>
+                        <li class="socialmedia soc_xing">
+
+
+            <a href="https://www.xing.com/social_plugins/share/new?h=1&amp;url=https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Firewall/firewall" target="_blank">Xing</a>
+                            
+                       </li>
+                     </ul>
+                   </div>
+               </div>
+         </div>
+      <div id="navBreadcrumbs">
+        <p class="aural">Sie sind hier:</p>
+  <ol><li class="first"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/empfehlungen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Empfehlungen" accesskey="b">Empfehlungen</a></li><li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/schutzprogramme_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schutz- und Hilfsprogramme">Schutz- und Hilfsprogramme</a></li><li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Firewall/firewall_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Firewall">Firewall</a></li><li><strong>Firewall</strong></li></ol>
+      </div>
+      <div id="footer">
+  
+<div id="siteInfo" class="row show-for-large-up">
+    <h2 class="aural">Unternavigation aller Website-Bereiche</h2>
+    <ul class="large-block-grid-4">
+      <li>
+        <h3>Risiken</h3>
+          <ul>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/BotNetze/botnetze_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Botnetze">Bot­net­ze</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/DoS/dos_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="DoS - Denial of Service">DoS - De­ni­al of Ser­vice</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/FalscheAntivirensoftware/falscheantivirensoftware_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Falsche Antivirensoftware">Falsche An­ti­vi­ren<span xml:lang="en-gb" lang="en-gb">soft­ware</span></a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Hacker/hacker_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Hacker">Ha­cker</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/ID-Diebstahl/id-diebstahl_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Identitätsdiebstahl">Iden­ti­täts­dieb­stahl</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Kostenfallen/kostenfallen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kostenfallen">Kos­ten­fal­len</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Mobbing/mobbing_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Mobbing">Mob­bing</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/PUP/pup_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Potenziell unerwünschte Programme">Po­ten­zi­ell un­er­wünsch­te Pro­gram­me</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/Schadprogramme/schadprogramme_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schadprogramme">Schad­programme</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/SpamPhishingCo/spamPhishingCo_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Spam, Phishing &amp; Co">Spam, Phis­hing &amp; Co</a></li>
+          </ul>
+      </li>
+      <li>
+        <h3>Empfehlungen</h3>
+          <ul>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/BasisschutzGeraet/BasisschutzGeraet_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Basisschutz für Computer &amp; Smartphone">Basisschutz für Computer &amp; Smart­pho­ne</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungWLAN-LAN/EinrichtungLAN-WLAN_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="LAN und WLAN sicher einrichten">LAN und WLAN sicher ein­rich­ten</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/EinrichtungSoftware_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Einrichtung von Software">Ih­re Soft­ware sicher ein­rich­ten</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/schutzprogramme_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Schutz- und Hilfsprogramme">Schutz- und Hilfs­pro­gram­me</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Passwoerter/passwoerter_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Passwörter">Pass­wör­ter</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Benutzerkonten/benutzerkontennetzwerk_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Benutzerkonten ">Be­nut­zer­kon­ten </a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Verschluesselung/Verschluesselung_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Verschlüsselung">Ver­schlüs­se­lung</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Datensicherung/datensicherung_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Datensicherung">Da­ten­si­che­rung</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/RichtigLoeschen/richtigloeschen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Daten richtig löschen">Da­ten rich­tig lö­schen</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Kinderschutz/kinderschutz_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kinderschutz">Kin­der­schutz</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Menschenverstand/menschenverstand_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Surfen Sie mit gesundem Menschenverstand">Ge­sun­der Men­schen­ver­stand</a></li>
+          </ul>
+      </li>
+      <li>
+        <h3>Digitale Gesellschaft</h3>
+          <ul>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/KommunikationUeberInternet/Messenger/instantMessenger_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Instant Messenger">In­stant Mes­sen­ger</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Verschluesselung/Verschluesseltkommunizieren/verschluesselt_kommunizieren_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Verschlüsselt kommunizieren">Ver­schlüs­selt kom­mu­ni­zie­ren</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Reisen/reisen_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="IT-Sicherheit und Reisen">IT-Si­cher­heit und Rei­sen</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/SozialeNetze/sozialeNetze_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Soziale Netzwerke">So­zia­le Netz­wer­ke</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/CloudComputing/cloudcomputing_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Cloud Computing">Cloud Com­pu­ting</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/EinkaufenImInternet/einkaufeniminternet_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Einkaufen im Internet">Einkaufen im Internet</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/OnlineBanking/onlinebanking_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Online-Banking">On­line-Ban­king</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/SmartTV/SmartTV_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Smart-TV">Smart-TV</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/Computerspiele/computerspiele_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Computerspiele">Com­pu­ter­spie­le</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/DerStaatOnline/derstaatonline_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Der Staat online">Der Staat on­line</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/DigitaleGesellschaft/RechtImInternet/rechtiminternet_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Recht im Internet">Recht im Internet</a></li>
+          </ul>
+      </li>
+      <li>
+        <h3>Service</h3>
+          <ul>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Aktuell/aktuell_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Aktuell">Ak­tu­ell</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Kontakt/kontakt_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Kontakt">Kon­takt</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Das_BSI/dasBSI_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Über das BSI" accesskey="1">Über das BSI</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Checklisten/checklisten_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Checklisten und Tipps">Check­lis­ten und Tipps</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Mediathek/broschueren_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Broschüren">Me­dia­thek</a></li>
+            
+<li class="navServiceNewsletter"><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Aktuell/Newsletter/abonnieren/newsletter_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369"><span xml:lang="en-GB" lang="en-GB">Newslet­ter</span> abon­nie­ren</a></li>
+            
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Service/Glossar/glossar_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Glossar">Glossar </a></li>
+          </ul>
+      </li>
+    </ul>
+</div>
+      </div>
+
+      <div class="row additionalFooter">
+  
+<div class="column large-8 footerLinks">
+      <ul>
+          
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Datenschutz/datenschutz_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Datenschutz">Da­ten­schutz</a></li>
+          
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Benutzerhinweise/benutzerhinweise_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369">Be­nut­zer­hin­wei­se</a></li>
+          
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Haftungsausschluss/haftungsausschluss_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369">Haf­tungs­aus­schluss</a></li>
+          
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Sitemap/sitemap_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369">In­halts­ver­zeich­nis</a></li>
+          
+<li><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Wissenswertes_Hilfreiches/Impressum/impressum_node.html;jsessionid=E1AD1AF2DAAE3E5E8FCD3ECC4C0A4488.2_cid369" title="Impressum" accesskey="5">Im­pres­s­um</a></li>
+      </ul>
+</div>
+        <div class="column large-4 copyright">
+  <p>© Bundesamt für Sicherheit in der Informationstechnik</p>
+        </div>
+      </div>
+  <div class="aural"> 
+<a href="mailto:samp@bsi.bund.de"></a>
+<a href="mailto:sampv@bsi.bund.de"></a>
+<a href="mailto:sampc@bsi.bund.de"></a> 
+</div> 
+
+    </div>  </div></div>
+    <!-- Seite generiert am: Tue Nov 15 14:27:24 CET 2016 -->
+    <script type="text/javascript" src="BSIFB%20-%20Firewall%20-%20Firewall-Dateien/global.js"></script>
+  
+</body></html>
