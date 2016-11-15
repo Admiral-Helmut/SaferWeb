@@ -12,16 +12,18 @@ import zlib
 import time
 import json
 import re
+import Crypto
+from Crypto.PublicKey import RSA
+from Crypto import Random
+import ast
+import datetime
 from BaseHTTPServer import HTTPServer, BaseHTTPRequestHandler
 from SocketServer import ThreadingMixIn
 from cStringIO import StringIO
 from subprocess import Popen, PIPE
 from HTMLParser import HTMLParser
 
-
-def with_color(c, s):
-    return "\x1b[%dm%s\x1b[0m" % (c, s)
-
+keyDict = {"01012000":"XXXXX"}
 
 class ThreadingHTTPServer(ThreadingMixIn, HTTPServer):
     address_family = socket.AF_INET6
@@ -272,29 +274,34 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
-    def print_info(self, req, req_body, res, res_body):
+    def info_logging(self, req, req_body, res, res_body):
+        communication_log = ""
         def parse_qsl(s):
             return '\n'.join("%-20s %s" % (k, v) for k, v in urlparse.parse_qsl(s, keep_blank_values=True))
 
         req_header_text = "%s %s %s\n%s" % (req.command, req.path, req.request_version, req.headers)
         res_header_text = "%s %d %s\n%s" % (res.response_version, res.status, res.reason, res.headers)
 
-        print with_color(33, req_header_text)
+        print req_header_text
+        communication_log += req_header_text
 
         u = urlparse.urlsplit(req.path)
         if u.query:
             query_text = parse_qsl(u.query)
-            print with_color(32, "==== QUERY PARAMETERS ====\n%s\n" % query_text)
+            print "==== QUERY PARAMETERS ====\n%s\n" % query_text
+            communication_log += "==== QUERY PARAMETERS ====\n%s\n" % query_text
 
         cookie = req.headers.get('Cookie', '')
         if cookie:
             cookie = parse_qsl(re.sub(r';\s*', '&', cookie))
-            print with_color(32, "==== COOKIE ====\n%s\n" % cookie)
+            print "==== COOKIE ====\n%s\n" % cookie
+            communication_log += "==== COOKIE ====\n%s\n" % cookie
 
         auth = req.headers.get('Authorization', '')
         if auth.lower().startswith('basic'):
             token = auth.split()[1].decode('base64')
-            print with_color(31, "==== BASIC AUTH ====\n%s\n" % token)
+            print "==== BASIC AUTH ====\n%s\n" % token
+            communication_log += "==== BASIC AUTH ====\n%s\n" % token
 
         if req_body is not None:
             req_body_text = None
@@ -317,14 +324,17 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                 req_body_text = req_body
 
             if req_body_text:
-                print with_color(32, "==== REQUEST BODY ====\n%s\n" % req_body_text)
+                print "==== REQUEST BODY ====\n%s\n" % req_body_text
+                communication_log += "==== REQUEST BODY ====\n%s\n" % req_body_text
 
-        print with_color(36, res_header_text)
+        print res_header_text
+        communication_log += res_header_text
 
         cookies = res.headers.getheaders('Set-Cookie')
         if cookies:
             cookies = '\n'.join(cookies)
-            print with_color(31, "==== SET-COOKIE ====\n%s\n" % cookies)
+            print "==== SET-COOKIE ====\n%s\n" % cookies
+            communication_log += "==== SET-COOKIE ====\n%s\n" % cookies
 
         if res_body is not None:
             res_body_text = None
@@ -345,12 +355,15 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                 m = re.search(r'<title[^>]*>\s*([^<]+?)\s*</title>', res_body, re.I)
                 if m:
                     h = HTMLParser()
-                    print with_color(32, "==== HTML TITLE ====\n%s\n" % h.unescape(m.group(1).decode('utf-8')))
+                    print "==== HTML TITLE ====\n%s\n" % h.unescape(m.group(1).decode('utf-8'))
+                    communication_log += "==== HTML TITLE ====\n%s\n" % h.unescape(m.group(1).decode('utf-8'))
             elif content_type.startswith('text/') and len(res_body) < 1024:
                 res_body_text = res_body
 
             if res_body_text:
-                print with_color(32, "==== RESPONSE BODY ====\n%s\n" % res_body_text)
+                print "==== RESPONSE BODY ====\n%s\n" % res_body_text
+                communication_log += "==== RESPONSE BODY ====\n%s\n" % res_body_text
+        #encrypted_logging(communication_log)
 
     def request_handler(self, req, req_body):
         pass
@@ -359,7 +372,29 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         pass
 
     def save_handler(self, req, req_body, res, res_body):
-        self.print_info(req, req_body, res, res_body)
+        self.info_logging(req, req_body, res, res_body)
+
+
+def encrypted_logging(logText):
+    thisDay = str(datetime.datetime.now().day) + str(datetime.datetime.now().month) + str(datetime.datetime.now().year)
+    key = None
+    if thisDay in keyDict:
+        key = keyDict[thisDay]
+    else:
+        random_generator = Random.new().read
+        key = RSA.generate(2048, random_generator)  # generate pub and priv key
+        keyDict[thisDay] = key
+        f = open(thisDay + '.pem', 'w')
+        f.write(key.exportKey('PEM'))
+        f.close()
+
+    publickey = key.publickey()  # pub key export for exchange
+    encrypted = publickey.encrypt(logText, 32)
+    logtime = str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) + str(
+        datetime.datetime.now().second) + str(datetime.datetime.now().microsecond)
+    f = open(thisDay + logtime + '.txt', 'wb')
+    f.write(str(encrypted))  # write ciphertext to file
+    f.close()
 
 
 def test(HandlerClass=ProxyRequestHandler, ServerClass=ThreadingHTTPServer, protocol="HTTP/1.1"):
