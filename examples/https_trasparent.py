@@ -1,4 +1,6 @@
-from proxy2 import *
+from BaseHTTPServer import HTTPServer, BaseHTTPRequestHandler
+from SocketServer import ThreadingMixIn
+
 
 class ThreadingHTTPSServer(ThreadingHTTPServer):
     address_family = socket.AF_INET6

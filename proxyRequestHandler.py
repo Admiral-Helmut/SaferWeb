@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-import sys
 import os
 import socket
 import ssl
@@ -10,47 +8,45 @@ import threading
 import gzip
 import zlib
 import time
-import json
 import re
-import Crypto
-from Crypto.PublicKey import RSA
-from Crypto import Random
-import ast
-import datetime
-from BaseHTTPServer import HTTPServer, BaseHTTPRequestHandler
-from SocketServer import ThreadingMixIn
+from logger import DebugLogger
+from BaseHTTPServer import BaseHTTPRequestHandler
 from cStringIO import StringIO
 from subprocess import Popen, PIPE
-from HTMLParser import HTMLParser
-
-keyDict = {"01012000":"XXXXX"}
-
-class ThreadingHTTPServer(ThreadingMixIn, HTTPServer):
-    address_family = socket.AF_INET6
-    daemon_threads = True
-
-    def handle_error(self, request, client_address):
-        # surpress socket/ssl related errors
-        cls, e = sys.exc_info()[:2]
-        if cls is socket.error or cls is ssl.SSLError:
-            pass
-        else:
-            return HTTPServer.handle_error(self, request, client_address)
-
 
 class ProxyRequestHandler(BaseHTTPRequestHandler):
-    cakey = 'ca.key'
-    cacert = 'ca.crt'
-    certkey = 'cert.key'
+
+    # override default protocol version to use with BaseHTTPServer
+    protocol_version = "HTTP/1.1"
+    user_agent = ""
+    logger=DebugLogger()
+
+    cakey = 'ca/ca.key'
+    cacert = 'ca/ca.crt'
+    certkey = 'ca/cert.key'
     certdir = 'certs/'
+
+    # override Timeout for http and https connection
     timeout = 5
+
+    # threading lock for tsl connections
     lock = threading.Lock()
 
     def __init__(self, *args, **kwargs):
         self.tls = threading.local()
         self.tls.conns = {}
 
+        self.check_for_certificate_files()
+
         BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+
+    def check_for_certificate_files(self):
+        self.certificate_files_okay = (
+            os.path.isfile(self.cakey)
+            and os.path.isfile(self.cacert)
+            and os.path.isfile(self.certkey)
+            and os.path.isdir(self.certdir)
+        )
 
     def log_error(self, format, *args):
         # surpress "Request timed out: timeout('timed out',)"
@@ -115,13 +111,20 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                 other.sendall(data)
 
     def do_GET(self):
-        if self.path == 'http://proxy2.test/':
+        if self.path == 'http://saferweb.trust/':
+            self.send_cacert()
+            return
+
+
+        if self.path == 'http://illegal.domain/':
             self.send_cacert()
             return
 
         req = self
         content_length = int(req.headers.get('Content-Length', 0))
         req_body = self.rfile.read(content_length) if content_length else None
+        req_User_Agent = req.headers.get('User-Agent', 0)
+        print req_User_Agent
 
         if req.path[0] == '/':
             if isinstance(self.connection, ssl.SSLSocket):
@@ -130,6 +133,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                 req.path = "http://%s%s" % (req.headers['Host'], req.path)
 
         req_body_modified = self.request_handler(req, req_body)
+
         if req_body_modified is False:
             self.send_error(403)
             return
@@ -274,143 +278,17 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
-    def info_logging(self, req, req_body, res, res_body):
-        communication_log = ""
-        def parse_qsl(s):
-            return '\n'.join("%-20s %s" % (k, v) for k, v in urlparse.parse_qsl(s, keep_blank_values=True))
-
-        req_header_text = "%s %s %s\n%s" % (req.command, req.path, req.request_version, req.headers)
-        res_header_text = "%s %d %s\n%s" % (res.response_version, res.status, res.reason, res.headers)
-
-        print req_header_text
-        communication_log += req_header_text
-
-        u = urlparse.urlsplit(req.path)
-        if u.query:
-            query_text = parse_qsl(u.query)
-            print "==== QUERY PARAMETERS ====\n%s\n" % query_text
-            communication_log += "==== QUERY PARAMETERS ====\n%s\n" % query_text
-
-        cookie = req.headers.get('Cookie', '')
-        if cookie:
-            cookie = parse_qsl(re.sub(r';\s*', '&', cookie))
-            print "==== COOKIE ====\n%s\n" % cookie
-            communication_log += "==== COOKIE ====\n%s\n" % cookie
-
-        auth = req.headers.get('Authorization', '')
-        if auth.lower().startswith('basic'):
-            token = auth.split()[1].decode('base64')
-            print "==== BASIC AUTH ====\n%s\n" % token
-            communication_log += "==== BASIC AUTH ====\n%s\n" % token
-
-        if req_body is not None:
-            req_body_text = None
-            content_type = req.headers.get('Content-Type', '')
-
-            if content_type.startswith('application/x-www-form-urlencoded'):
-                req_body_text = parse_qsl(req_body)
-            elif content_type.startswith('application/json'):
-                try:
-                    json_obj = json.loads(req_body)
-                    json_str = json.dumps(json_obj, indent=2)
-                    if json_str.count('\n') < 50:
-                        req_body_text = json_str
-                    else:
-                        lines = json_str.splitlines()
-                        req_body_text = "%s\n(%d lines)" % ('\n'.join(lines[:50]), len(lines))
-                except ValueError:
-                    req_body_text = req_body
-            elif len(req_body) < 1024:
-                req_body_text = req_body
-
-            if req_body_text:
-                print "==== REQUEST BODY ====\n%s\n" % req_body_text
-                communication_log += "==== REQUEST BODY ====\n%s\n" % req_body_text
-
-        print res_header_text
-        communication_log += res_header_text
-
-        cookies = res.headers.getheaders('Set-Cookie')
-        if cookies:
-            cookies = '\n'.join(cookies)
-            print "==== SET-COOKIE ====\n%s\n" % cookies
-            communication_log += "==== SET-COOKIE ====\n%s\n" % cookies
-
-        if res_body is not None:
-            res_body_text = None
-            content_type = res.headers.get('Content-Type', '')
-
-            if content_type.startswith('application/json'):
-                try:
-                    json_obj = json.loads(res_body)
-                    json_str = json.dumps(json_obj, indent=2)
-                    if json_str.count('\n') < 50:
-                        res_body_text = json_str
-                    else:
-                        lines = json_str.splitlines()
-                        res_body_text = "%s\n(%d lines)" % ('\n'.join(lines[:50]), len(lines))
-                except ValueError:
-                    res_body_text = res_body
-            elif content_type.startswith('text/html'):
-                m = re.search(r'<title[^>]*>\s*([^<]+?)\s*</title>', res_body, re.I)
-                if m:
-                    h = HTMLParser()
-                    print "==== HTML TITLE ====\n%s\n" % h.unescape(m.group(1).decode('utf-8'))
-                    communication_log += "==== HTML TITLE ====\n%s\n" % h.unescape(m.group(1).decode('utf-8'))
-            elif content_type.startswith('text/') and len(res_body) < 1024:
-                res_body_text = res_body
-
-            if res_body_text:
-                print "==== RESPONSE BODY ====\n%s\n" % res_body_text
-                communication_log += "==== RESPONSE BODY ====\n%s\n" % res_body_text
-        #encrypted_logging(communication_log)
+    def reject_url(self):
+        self.send_response(self,404,"Request rejected, ulr seams unsave")
 
     def request_handler(self, req, req_body):
+        self.user_agent = req.headers.get('User-Agent', 0)
+        self.headers["User-Agent"] = "saferWeb Proxy/0.1 (Anonymous web Proxy)"
         pass
 
     def response_handler(self, req, req_body, res, res_body):
+        res.headers["User-Agent"] = self.user_agent
         pass
 
     def save_handler(self, req, req_body, res, res_body):
-        self.info_logging(req, req_body, res, res_body)
-
-
-def encrypted_logging(logText):
-    thisDay = str(datetime.datetime.now().day) + str(datetime.datetime.now().month) + str(datetime.datetime.now().year)
-    key = None
-    if thisDay in keyDict:
-        key = keyDict[thisDay]
-    else:
-        random_generator = Random.new().read
-        key = RSA.generate(2048, random_generator)  # generate pub and priv key
-        keyDict[thisDay] = key
-        f = open(thisDay + '.pem', 'w')
-        f.write(key.exportKey('PEM'))
-        f.close()
-
-    publickey = key.publickey()  # pub key export for exchange
-    encrypted = publickey.encrypt(logText, 32)
-    logtime = str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) + str(
-        datetime.datetime.now().second) + str(datetime.datetime.now().microsecond)
-    f = open(thisDay + logtime + '.txt', 'wb')
-    f.write(str(encrypted))  # write ciphertext to file
-    f.close()
-
-
-def test(HandlerClass=ProxyRequestHandler, ServerClass=ThreadingHTTPServer, protocol="HTTP/1.1"):
-    if sys.argv[1:]:
-        port = int(sys.argv[1])
-    else:
-        port = 8000
-    server_address = ('', port)
-
-    HandlerClass.protocol_version = protocol
-    httpd = ServerClass(server_address, HandlerClass)
-
-    sa = httpd.socket.getsockname()
-    print "Serving HTTP Proxy on", sa[0], "port", sa[1], "..."
-    httpd.serve_forever()
-
-
-if __name__ == '__main__':
-    test()
+        self.logger.print_info(req, req_body, res, res_body)
