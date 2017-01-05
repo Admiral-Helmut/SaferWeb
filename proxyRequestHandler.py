@@ -9,6 +9,8 @@ import gzip
 import zlib
 import time
 import re
+import urlparse
+import urlBlacklist
 from logger import DebugLogger
 from BaseHTTPServer import BaseHTTPRequestHandler
 from cStringIO import StringIO
@@ -111,13 +113,14 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                 other.sendall(data)
 
     def do_GET(self):
+        # deliver the Trust Store
         if self.path == 'http://saferweb.trust/':
             self.send_cacert()
             return
 
-
-        if self.path == 'http://illegal.domain/':
-            self.send_cacert()
+        # Check if a domain ist blacklisted ?
+        if urlBlacklist.check_url(self.path):
+            self.reject_url()
             return
 
         req = self
@@ -279,11 +282,14 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
     def reject_url(self):
-        self.send_response(self,404,"Request rejected, ulr seams unsave")
+        self.send_error(900,  "Request rejected, ulr seams unsave")
 
     def request_handler(self, req, req_body):
         self.user_agent = req.headers.get('User-Agent', 0)
         self.headers["User-Agent"] = "saferWeb Proxy/0.1 (Anonymous web Proxy)"
+        u = urlparse.urlsplit(req.path)
+        if u.query:
+            print u.query
         pass
 
     def response_handler(self, req, req_body, res, res_body):
