@@ -14,3 +14,10 @@ key2 = RSA.importKey(f.read())
 decrypted = key2.decrypt(ast.literal_eval(str(message)))
 
 print 'decrypted', decrypted
+
+
+# Decryption AES
+#decryption_suite = AES.new(key, AES.MODE_CBC, AES_IV)
+#plain_text = decryption_suite.decrypt(cipher_text)
+
+#print plain_text
