@@ -143,8 +143,9 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
             return
 
         # deliver the Help Page
-        if self.path == 'http://saferweb.help/':
-            self.send_help()
+        if 'saferweb.help' in self.path:
+            sub = urlparse.urlsplit(self.path)
+            self.send_help(sub)
             return
 
         # Check if a domain ist blacklisted ?
@@ -224,25 +225,6 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         if req.headers['Host'] in self.allow_http:
             print "handle triggered"
             req.path = "http://%s%s" % (req.headers['Host'],subpath)
-
-
-        # if isinstance(self.connection, ssl.SSLSocket):
-        #     #print "https://%s%s" % (req.headers['Host'], req.path)
-        #     req.path = "https://%s%s" % (req.headers['Host'], req.path)
-        # else:
-        #     print "https_urls_store: "
-        #     print self.allow_http
-        #     print "end"
-        #     if req.headers['Host'] in self.allow_http:
-        #         self.redirect_https("https://%s" % (req.headers['Host']))
-        #         req.path = "http://%s%s" % (req.headers['Host'], req.path)
-        #     else:
-        #         self.redirect_https("https://%s" % (req.headers['Host']))
-        #         req.path = "https://%s%s" % (req.headers['Host'], req.path)
-        # if req.headers['Host'] in self.allow_http:
-        #     req.path = "http://%s%s" % (req.headers['Host'], req.path)
-
-
 
         req_body_modified = self.request_handler(req, req_body)
 
@@ -466,11 +448,19 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
     def save_handler(self, req, req_body, res, res_body):
         self.logger.print_info(req, req_body, res, res_body)
 
-    def send_help(self):
-        self.wfile.write("%s %d %s\r\n" % (self.protocol_version, 900,
-                                           "General saferWeb Help"))
-        self.end_headers()
-        with open("help.html", 'rb') as f:
-            data = f.read()
+    def send_help(self, sub):
+        if sub.path == "/":
+            self.wfile.write("%s %d %s\r\n" % (self.protocol_version, 900,
+                                               "General saferWeb Help"))
+            self.end_headers()
+            with open("help.html", 'rb') as f:
+                data = f.read()
+        else:
+            try:
+                with open("Sicherheitskonzept-SaferWeb-Dateien"+sub.path, 'rb') as f:
+                    data = f.read()
+            except Exception as e:
+                self.send_error(404, "Not found")
+                return
 
         self.wfile.write(data)
