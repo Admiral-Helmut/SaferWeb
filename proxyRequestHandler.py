@@ -1,4 +1,5 @@
 import os
+from pprint import pprint
 import socket
 import ssl
 import select
@@ -16,6 +17,7 @@ from logger import DebugLogger
 from BaseHTTPServer import BaseHTTPRequestHandler
 from cStringIO import StringIO
 from subprocess import Popen, PIPE
+from functools import partial
 
 class ProxyRequestHandler(BaseHTTPRequestHandler):
 
@@ -190,6 +192,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                         if v == "confirm":
                             unsecure = False
                         if v == "add":
+                            print 'adding host '+req.headers['Host']
                             self.allow_http.append(req.headers['Host'])
                         break
 
@@ -219,11 +222,11 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                 self.redirect_https("https://%s%s" % (req.headers['Host'],subpath))
                 return
 
-
-        self.allow_http.append("www.chip.de")
+        # for debugging comment in
+        #self.allow_http.append("www.chip.de")
         # handle hosts that do not support https:
         if req.headers['Host'] in self.allow_http:
-            print "handle triggered"
+            print "The url "+req.headers['Host']+" is marked as http trusted"
             req.path = "http://%s%s" % (req.headers['Host'],subpath)
 
         req_body_modified = self.request_handler(req, req_body)
@@ -252,8 +255,11 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                     self.tls.conns[origin] = httplib.HTTPConnection(netloc, timeout=self.timeout)
             conn = self.tls.conns[origin]
             conn.request(self.command, path, req_body, dict(req.headers))
+
             res = conn.getresponse()
 
+            if isinstance(conn.sock, ssl.SSLSocket) :
+                print conn.sock.cipher()
             version_table = {10: 'HTTP/1.0', 11: 'HTTP/1.1'}
             setattr(res, 'headers', res.msg)
             setattr(res, 'response_version', version_table[res.version])
@@ -267,6 +273,9 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                     with self.lock:
                         self.save_handler(req, req_body, res, '')
                     return
+            if res.status in [301,404]:
+                self.reject_http("https://%s" % (req.headers['Host']))
+                return
 
             res_body = res.read()
         except Exception as e:
@@ -300,6 +309,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         setattr(res, 'headers', self.filter_headers(res.headers))
 
         self.wfile.write("%s %d %s\r\n" % (self.protocol_version, res.status, res.reason))
+        print self.protocol_version
         for line in res.headers.headers:
             self.wfile.write(line)
         self.end_headers()
@@ -394,13 +404,13 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         self.send_header('X-Forwarded-Proto', 'https')
 
     def reject_http(self, location):
-        print "Request to " + self.headers['Host'] + ": "+ self.path + "interceptend and stalled: "
+        print "Request to " + self.headers['Host'] + ": "+ self.path + " interceptend and stalled: "
         print "return 903: The Website you are trying to access does not support secure connections"
         self.wfile.write("%s %d %s\r\n" % (self.protocol_version, 903,
                                            "The Website you are trying to access does not support secure connections"))
         self.end_headers()
         self.wfile.write("<body><head></head><body><h1>Request stalled</h1>")
-        self.wfile.write("<form action=\"http://" + self.headers['Host'] + "\" method=\"get\">")
+        self.wfile.write("<form action=\"https://" + self.headers['Host'] + "\" method=\"post\">")
         self.wfile.write("<input type=\"hidden\" name=\"saferWeb\" value=\"add\">")
         self.wfile.write(
             "<p>Please confirm that you want to visit the website <br>%s<br> altough, it doesn't support https</p>" % self.headers['Host'])
@@ -408,7 +418,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
             "<input type=\"submit\" value=\"Send request\"> <INPUT Type=\"button\" VALUE=\"Return to previous page\" onClick=\"history.go(-1);return true;\"></form></body>")
 
     def confirm_url(self, param):
-        print "Request to "+ self.headers['Host'] + ": "+self.path +"interceptend and stalled: "
+        print "Request to "+ self.headers['Host'] + ": "+self.path +" interceptend and stalled: "
         print "return 901: The Website you are trying to access is requesting some possibly sensitive information, pleate confirm That you want to continue"
         self.wfile.write("%s %d %s\r\n" % (self.protocol_version, 901, "The Website you are trying to access is requesting some possibly sensitive information, pleate confirm That you want to continue"))
         self.end_headers()
@@ -432,11 +442,13 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
 
     filtered_tags = [
         'script',
-        'iframe'
+        'iframe',
+        '%'
     ]
 
     def response_handler(self, req, req_body, res, res_body):
         res.headers["User-Agent"] = self.user_agent
+        res.headers["Host"] = "https://%s" % (req.headers['Host'])
         if req.headers['Host'] in self.allow_http:
             res_body = re.sub(r"http:\/\/", "https://", res_body)
         # comment all scripts, somehow removing doesn't macht all
@@ -464,3 +476,6 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                 return
 
         self.wfile.write(data)
+
+class fake_ssl:
+    wrap_socket = partial(ssl.wrap_socket, ssl_version=ssl.PROTOCOL_SSLv3)
