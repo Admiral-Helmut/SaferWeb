@@ -24,6 +24,11 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
     user_agent = ""
     logger=DebugLogger()
     allow_http= []
+    remove_Headers=[
+        "If-Modified-Since",
+        "If-None-Match",
+        "Cache-Control"
+    ]
 
     cakey = 'ca/ca.key'
     cacert = 'ca/ca.crt'
@@ -179,12 +184,15 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
             if content_type.startswith('application/x-www-form-urlencoded'):
                 for k, v in urlparse.parse_qsl(req_body, keep_blank_values=True):
 
+                    #handle slatted requests
                     if k == "saferWeb":
                         if v == "confirm":
                             unsecure = False
                         if v == "add":
                             self.allow_http.append(req.headers['Host'])
                         break
+
+                    #handle insecure params
                     for key in sensitive_param_names:
                         #print "compare "+key+" with "+k+"\n"
                         if key in k:
@@ -195,27 +203,44 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
             return
         # end login interception routin
 
-        # persist http connections
-
-
+        # replace User_Agent
         req_User_Agent = req.headers.get('User-Agent', 0)
         print "original User_Agent: " + req_User_Agent
 
+        subpath = ""
+        if req.path[0] == '/':
+            subpath = req.path
+        # redirect all traffic towards https
         if isinstance(self.connection, ssl.SSLSocket):
-            #print "https://%s%s" % (req.headers['Host'], req.path)
-            req.path = "https://%s%s" % (req.headers['Host'], req.path)
+            req.path = "https://%s%s" % (req.headers['Host'],subpath)
         else:
-            print "https_urls_store: "
-            print self.allow_http
-            print "end"
-            if req.headers['Host'] in self.allow_http:
-                self.redirect_https("https://%s" % (req.headers['Host']))
-                req.path = "http://%s%s" % (req.headers['Host'], req.path)
-            else:
-                self.redirect_https("https://%s" % (req.headers['Host']))
-                req.path = "https://%s%s" % (req.headers['Host'], req.path)
+            if not req.headers['Host'] in self.allow_http:
+                self.redirect_https("https://%s%s" % (req.headers['Host'],subpath))
+                return
+
+
+        self.allow_http.append("www.chip.de")
+        # handle hosts that do not support https:
         if req.headers['Host'] in self.allow_http:
-            req.path = "http://%s%s" % (req.headers['Host'], req.path)
+            print "handle triggered"
+            req.path = "http://%s%s" % (req.headers['Host'],subpath)
+
+
+        # if isinstance(self.connection, ssl.SSLSocket):
+        #     #print "https://%s%s" % (req.headers['Host'], req.path)
+        #     req.path = "https://%s%s" % (req.headers['Host'], req.path)
+        # else:
+        #     print "https_urls_store: "
+        #     print self.allow_http
+        #     print "end"
+        #     if req.headers['Host'] in self.allow_http:
+        #         self.redirect_https("https://%s" % (req.headers['Host']))
+        #         req.path = "http://%s%s" % (req.headers['Host'], req.path)
+        #     else:
+        #         self.redirect_https("https://%s" % (req.headers['Host']))
+        #         req.path = "https://%s%s" % (req.headers['Host'], req.path)
+        # if req.headers['Host'] in self.allow_http:
+        #     req.path = "http://%s%s" % (req.headers['Host'], req.path)
 
 
 
@@ -230,8 +255,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
 
         u = urlparse.urlsplit(req.path)
         scheme, netloc, path = u.scheme, u.netloc, (u.path + '?' + u.query if u.query else u.path)
-        print path
-        print req.path
+
         assert scheme in ('http', 'https')
         if netloc:
             req.headers['Host'] = netloc
@@ -416,14 +440,28 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
     def request_handler(self, req, req_body):
         self.user_agent = req.headers.get('User-Agent', 0)
         self.headers["User-Agent"] = "saferWeb Proxy/0.1 (Anonymous web Proxy)"
+        for header in self.remove_Headers:
+            if self.headers.get(header) is not None:
+                del self.headers[header]
         u = urlparse.urlsplit(req.path)
         if u.query:
             print u.query
         pass
 
+    filtered_tags = [
+        'script',
+        'iframe'
+    ]
+
     def response_handler(self, req, req_body, res, res_body):
         res.headers["User-Agent"] = self.user_agent
-        pass
+        if req.headers['Host'] in self.allow_http:
+            res_body = re.sub(r"http:\/\/", "https://", res_body)
+        # comment all scripts, somehow removing doesn't macht all
+        for tag in self.filtered_tags:
+            res_body = re.sub("<"+tag, "<!--"+tag, res_body)
+            res_body = re.sub("</"+tag, "</"+tag+"--", res_body)
+        return res_body
 
     def save_handler(self, req, req_body, res, res_body):
         self.logger.print_info(req, req_body, res, res_body)
@@ -432,4 +470,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write("%s %d %s\r\n" % (self.protocol_version, 900,
                                            "General saferWeb Help"))
         self.end_headers()
-        self.wfile.write("<body><head></head><body><h1>saferWeb Help</h1>")
+        with open("help.html", 'rb') as f:
+            data = f.read()
+
+        self.wfile.write(data)
