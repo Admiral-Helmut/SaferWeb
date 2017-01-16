@@ -3,6 +3,7 @@ import socket
 import ssl
 import select
 import httplib
+import traceback
 import urlparse
 import threading
 import gzip
@@ -22,6 +23,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
     user_agent = ""
     logger=DebugLogger()
+    allow_http= []
 
     cakey = 'ca/ca.key'
     cacert = 'ca/ca.crt'
@@ -113,27 +115,109 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                 other.sendall(data)
 
     def do_GET(self):
+        not_allowed_Files = {
+            'javascript',
+            'js',
+
+        }
+
+        sensitive_param_names = {
+            'uid',
+            'name', 'usr', 'user', 'username', 'surname',
+            'password', 'pwd', 'pass', 'pw',
+            'tel','telephone', 'phone', 'number',
+            'street', 'zip', 'gender', 'email', 'mail',
+            'code', 'location', 'position', 'country',
+            'secret',
+            'wpName'
+        }
+
         # deliver the Trust Store
         if self.path == 'http://saferweb.trust/':
             self.send_cacert()
             return
 
-        # Check if a domain ist blacklisted ?
-        if urlBlacklist.check_url(self.path):
-            self.reject_url()
+        # deliver the Help Page
+        if self.path == 'http://saferweb.help/':
+            self.send_help()
             return
 
+        # Check if a domain ist blacklisted ?
+        if urlBlacklist.check_url(self.path):
+            self.reject_url("The website you are trying to access is considered unsave and is Blacklisted for this Proxy. For your own protection all requests to this Domain are rejected")
+            return
+
+        # Check if it is a file and if it is whitelisted
+        for file in not_allowed_Files:
+            # block unauthorized files from request
+            if self.path.endswith(file):
+                print "not allowed content detected in request: " + file
+                self.reject_url("Javascript is not permited")
+                return
+
         req = self
+
+        # Test for parameters
+        unsecure = False
+        u = urlparse.urlsplit(req.path)
+        if u.query:
+            for k, v in urlparse.parse_qsl(u.query, keep_blank_values=True):
+                for key in sensitive_param_names:
+                    if key in k:
+                        unsecure = True
+
+
+
         content_length = int(req.headers.get('Content-Length', 0))
         req_body = self.rfile.read(content_length) if content_length else None
-        req_User_Agent = req.headers.get('User-Agent', 0)
-        print req_User_Agent
 
-        if req.path[0] == '/':
-            if isinstance(self.connection, ssl.SSLSocket):
-                req.path = "https://%s%s" % (req.headers['Host'], req.path)
-            else:
+        # this is the whole login interception routinl
+        if req_body is not None:
+            req_body_text = None
+            content_type = req.headers.get('Content-Type', '')
+
+            if content_type.startswith('application/x-www-form-urlencoded'):
+                for k, v in urlparse.parse_qsl(req_body, keep_blank_values=True):
+
+                    if k == "saferWeb":
+                        if v == "confirm":
+                            unsecure = False
+                        if v == "add":
+                            self.allow_http.append(req.headers['Host'])
+                        break
+                    for key in sensitive_param_names:
+                        #print "compare "+key+" with "+k+"\n"
+                        if key in k:
+                            unsecure = True
+
+        if unsecure:
+            self.confirm_url(req_body)
+            return
+        # end login interception routin
+
+        # persist http connections
+
+
+        req_User_Agent = req.headers.get('User-Agent', 0)
+        print "original User_Agent: " + req_User_Agent
+
+        if isinstance(self.connection, ssl.SSLSocket):
+            #print "https://%s%s" % (req.headers['Host'], req.path)
+            req.path = "https://%s%s" % (req.headers['Host'], req.path)
+        else:
+            print "https_urls_store: "
+            print self.allow_http
+            print "end"
+            if req.headers['Host'] in self.allow_http:
+                self.redirect_https("https://%s" % (req.headers['Host']))
                 req.path = "http://%s%s" % (req.headers['Host'], req.path)
+            else:
+                self.redirect_https("https://%s" % (req.headers['Host']))
+                req.path = "https://%s%s" % (req.headers['Host'], req.path)
+        if req.headers['Host'] in self.allow_http:
+            req.path = "http://%s%s" % (req.headers['Host'], req.path)
+
+
 
         req_body_modified = self.request_handler(req, req_body)
 
@@ -146,6 +230,8 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
 
         u = urlparse.urlsplit(req.path)
         scheme, netloc, path = u.scheme, u.netloc, (u.path + '?' + u.query if u.query else u.path)
+        print path
+        print req.path
         assert scheme in ('http', 'https')
         if netloc:
             req.headers['Host'] = netloc
@@ -167,20 +253,31 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
             setattr(res, 'response_version', version_table[res.version])
 
             # support streaming
-            if not 'Content-Length' in res.headers and 'no-store' in res.headers.get('Cache-Control'):
-                self.response_handler(req, req_body, res, '')
-                setattr(res, 'headers', self.filter_headers(res.headers))
-                self.relay_streaming(res)
-                with self.lock:
-                    self.save_handler(req, req_body, res, '')
-                return
+            if res.headers.get('Cache-Control'):
+                if not 'Content-Length' in res.headers and 'no-store' in res.headers.get('Cache-Control'):
+                    self.response_handler(req, req_body, res, '')
+                    setattr(res, 'headers', self.filter_headers(res.headers))
+                    self.relay_streaming(res)
+                    with self.lock:
+                        self.save_handler(req, req_body, res, '')
+                    return
 
             res_body = res.read()
         except Exception as e:
             if origin in self.tls.conns:
                 del self.tls.conns[origin]
-            self.send_error(502)
+            self.reject_http("https://%s" % (req.headers['Host']))
+            print "Exception:"
+            traceback.print_exc()
+            #self.send_error(502)
             return
+
+        for file in not_allowed_Files:
+            # block unauthorized files from request
+            if file in res.headers.get('Content-Type', ''):
+                print "\nnot allowed content detected in response, will be blockes: " + res.headers.get('Content-Type', '') + "\n"
+                self.reject_url("This content is not permitted through seafeWeb proxy")
+                return
 
         content_encoding = res.headers.get('Content-Encoding', 'identity')
         res_body_plain = self.decode_content_body(res_body, content_encoding)
@@ -281,8 +378,40 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
-    def reject_url(self):
-        self.send_error(900,  "Request rejected, ulr seams unsave")
+    def reject_url(self, msg):
+        self.send_error(900,  msg)
+
+    def redirect_https(self, location):
+        print "redirecting to https"
+        self.send_response(301, "https enforced")
+        self.send_header('Location', location)
+        self.send_header('X-Forwarded-Proto', 'https')
+
+    def reject_http(self, location):
+        print "Request to " + self.headers['Host'] + ": "+ self.path + "interceptend and stalled: "
+        print "return 903: The Website you are trying to access does not support secure connections"
+        self.wfile.write("%s %d %s\r\n" % (self.protocol_version, 903,
+                                           "The Website you are trying to access does not support secure connections"))
+        self.end_headers()
+        self.wfile.write("<body><head></head><body><h1>Request stalled</h1>")
+        self.wfile.write("<form action=\"http://" + self.headers['Host'] + "\" method=\"get\">")
+        self.wfile.write("<input type=\"hidden\" name=\"saferWeb\" value=\"add\">")
+        self.wfile.write(
+            "<p>Please confirm that you want to visit the website <br>%s<br> altough, it doesn't support https</p>" % self.headers['Host'])
+        self.wfile.write(
+            "<input type=\"submit\" value=\"Send request\"> <INPUT Type=\"button\" VALUE=\"Return to previous page\" onClick=\"history.go(-1);return true;\"></form></body>")
+
+    def confirm_url(self, param):
+        print "Request to "+ self.headers['Host'] + ": "+self.path +"interceptend and stalled: "
+        print "return 901: The Website you are trying to access is requesting some possibly sensitive information, pleate confirm That you want to continue"
+        self.wfile.write("%s %d %s\r\n" % (self.protocol_version, 901, "The Website you are trying to access is requesting some possibly sensitive information, pleate confirm That you want to continue"))
+        self.end_headers()
+        self.wfile.write("<body><head></head><body><h1>Request stalled</h1>")
+        self.wfile.write("<p>to the following address:</p>"+self.headers['Host']+self.path)
+        self.wfile.write("<form action=\"https://"+self.headers['Host']+self.path+"\" method=\"post\">")
+        self.wfile.write("<input type=\"hidden\" name=\"saferWeb\" value=\"confirm\">")
+        self.wfile.write("<p>Please confirm that you want to send the following information:</p><pre>%s</pre>" % '\n'.join("%-20s <input type=\"text\"  name=\"%s\" value=\"%s\"><br>" % (k, k, v) for k, v in urlparse.parse_qsl(param, keep_blank_values=True)))
+        self.wfile.write("<input type=\"submit\" value=\"Send request\"> <INPUT Type=\"button\" VALUE=\"Return to previous page\" onClick=\"history.go(-1);return true;\"></form></body>")
 
     def request_handler(self, req, req_body):
         self.user_agent = req.headers.get('User-Agent', 0)
@@ -298,3 +427,9 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
 
     def save_handler(self, req, req_body, res, res_body):
         self.logger.print_info(req, req_body, res, res_body)
+
+    def send_help(self):
+        self.wfile.write("%s %d %s\r\n" % (self.protocol_version, 900,
+                                           "General saferWeb Help"))
+        self.end_headers()
+        self.wfile.write("<body><head></head><body><h1>saferWeb Help</h1>")
