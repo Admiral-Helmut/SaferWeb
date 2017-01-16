@@ -4,7 +4,7 @@ import glob
 
 def check_url(url):
 
-    for filename in glob.iglob('blacklists/**/domains'):
+    for filename in glob.iglob('url_blacklists/**/domains'):
         with open(filename, 'r') as infile:
             data = infile.read()
             my_list = data.splitlines()
@@ -15,5 +15,5 @@ def check_url(url):
 
     return False
 
-
-print check_url('http://panty-paradise.com/test.php')
+# this is for test purposes
+#print check_url('https://panty-paradise.com/login.php')
