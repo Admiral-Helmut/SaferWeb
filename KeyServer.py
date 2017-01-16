@@ -44,8 +44,12 @@ class KeyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 
         content_length = int(s.headers['Content-Length'])
         encryptedAESKey = s.rfile.read(content_length)
+        encryptedAESKey = encryptedAESKey.splitlines()[3]
 
         # Do what you wish with file_content
+        encryptedAESKey = encryptedAESKey[2:]
+        encryptedAESKey=encryptedAESKey[:-3]
+        print "Key erhalten!"
         print "PostContent: "+ encryptedAESKey
 
         f = open("KeyServer/LogKeys/"+ thisDay +".pem", 'w')

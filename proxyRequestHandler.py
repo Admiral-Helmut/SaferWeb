@@ -257,6 +257,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
             conn.request(self.command, path, req_body, dict(req.headers))
 
             res = conn.getresponse()
+ # here check for cipher suits ????!!!!
 
             if isinstance(conn.sock, ssl.SSLSocket) :
                 print conn.sock.cipher()
@@ -476,6 +477,3 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                 return
 
         self.wfile.write(data)
-
-class fake_ssl:
-    wrap_socket = partial(ssl.wrap_socket, ssl_version=ssl.PROTOCOL_SSLv3)
