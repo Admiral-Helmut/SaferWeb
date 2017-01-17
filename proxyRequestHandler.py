@@ -13,6 +13,7 @@ import time
 import re
 import urlparse
 import urlBlacklist
+import cipherWhitelist
 from logger import DebugLogger
 from BaseHTTPServer import BaseHTTPRequestHandler
 from cStringIO import StringIO
@@ -263,6 +264,14 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
 
             if isinstance(conn.sock, ssl.SSLSocket) :
                 print conn.sock.cipher()
+                # Check if a cipher suite is whitelisted ?
+                #if cipherWhitelist.check_cipher(conn.sock.cipher()):
+                    #print "cipher suite ok"
+                #else:
+                    #print "cipher suite unsecure"
+                    #self.reject_url(
+                        #"The webserver you are trying to access is considered using unsave cipher suites. For your own protection all requests to this server are rejected")
+                    #return
             version_table = {10: 'HTTP/1.0', 11: 'HTTP/1.1'}
             setattr(res, 'headers', res.msg)
             setattr(res, 'response_version', version_table[res.version])
