@@ -31,7 +31,7 @@ class LogEncrypter(object):
             newDailyAESKey = Random.new().read(AES_KEY_LEN)
             self.keyDict[thisDay] = newDailyAESKey
 
-        dailyAESKey = self.keyDict[thisDay] = newDailyAESKey
+        dailyAESKey = self.keyDict[thisDay]
         # print dailyAESKey
         # print len(dailyAESKey)
 

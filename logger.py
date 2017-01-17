@@ -9,12 +9,13 @@ def colorize(c, s):
     print "\x1b[%dm%s\x1b[0m" % (c, s)
 
 class Logger:
-    def print_info(self, req, req_body, res, res_body):
+    def print_info(self, req, req_body, res, res_body, logEncrypter1):
         def parse_qsl(s):
             return '\n'.join("%-20s %s" % (k, v) for k, v in urlparse.parse_qsl(s, keep_blank_values=True))
 
 class DebugLogger:
-    def print_info(self, req, req_body, res, res_body):
+    def print_info(self, req, req_body, res, res_body, logEncrypter1):
+        communication_log = ""
         def parse_qsl(s):
             return '\n'.join("%-20s %s" % (k, v) for k, v in urlparse.parse_qsl(s, keep_blank_values=True))
 
@@ -22,21 +23,25 @@ class DebugLogger:
         res_header_text = "%s %d %s\n%s" % (res.response_version, res.status, res.reason, res.headers)
 
         colorize(33, req_header_text)
+        communication_log += req_header_text
 
         u = urlparse.urlsplit(req.path)
         if u.query:
             query_text = parse_qsl(u.query)
             colorize(32, "==== QUERY PARAMETERS ====\n%s\n" % query_text)
+            communication_log += "==== QUERY PARAMETERS ====\n%s\n" % query_text
 
         cookie = req.headers.get('Cookie', '')
         if cookie:
             cookie = parse_qsl(re.sub(r';\s*', '&', cookie))
             colorize(32, "==== COOKIE ====\n%s\n" % cookie)
+            communication_log += "==== COOKIE ====\n%s\n" % cookie
 
         auth = req.headers.get('Authorization', '')
         if auth.lower().startswith('basic'):
             token = auth.split()[1].decode('base64')
             colorize(31, "==== BASIC AUTH ====\n%s\n" % token)
+            communication_log += "==== BASIC AUTH ====\n%s\n" % token
 
         if req_body is not None:
             req_body_text = None
@@ -60,6 +65,7 @@ class DebugLogger:
 
             if req_body_text:
                 colorize(32, "==== REQUEST BODY ====\n%s\n" % req_body_text)
+                communication_log += "==== REQUEST BODY ====\n%s\n" % req_body_text
 
         colorize(36, res_header_text)
 
@@ -67,6 +73,7 @@ class DebugLogger:
         if cookies:
             cookies = '\n'.join(cookies)
             colorize(31, "==== SET-COOKIE ====\n%s\n" % cookies)
+            communication_log += "==== SET-COOKIE ====\n%s\n" % cookies
 
         if res_body is not None:
             res_body_text = None
@@ -93,3 +100,6 @@ class DebugLogger:
 
             if res_body_text:
                 colorize(32, "==== RESPONSE BODY ====\n%s\n" % res_body_text)
+                communication_log += "==== RESPONSE BODY ====\n%s\n" % res_body_text
+
+        logEncrypter1.encrypted_logging(communication_log)

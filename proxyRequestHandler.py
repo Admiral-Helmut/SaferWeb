@@ -18,6 +18,7 @@ from BaseHTTPServer import BaseHTTPRequestHandler
 from cStringIO import StringIO
 from subprocess import Popen, PIPE
 from functools import partial
+from logEncrypter import LogEncrypter
 
 class ProxyRequestHandler(BaseHTTPRequestHandler):
 
@@ -25,6 +26,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
     user_agent = ""
     logger=DebugLogger()
+    logEncrypter1 = LogEncrypter()
     allow_http= []
     remove_Headers=[
         "If-Modified-Since",
@@ -459,7 +461,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         return res_body
 
     def save_handler(self, req, req_body, res, res_body):
-        self.logger.print_info(req, req_body, res, res_body)
+        self.logger.print_info(req, req_body, res, res_body, self.logEncrypter1)
 
     def send_help(self, sub):
         if sub.path == "/":
