@@ -30,6 +30,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
     logEncrypter1 = LogEncrypter()
     allow_http= []
     allow_cipher= []
+    cert_pinns= []
     remove_Headers=[
         "If-Modified-Since",
         "If-None-Match",
@@ -264,17 +265,29 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
             conn.request(self.command, path, req_body, dict(req.headers))
 
             res = conn.getresponse()
- # here check for cipher suits ????!!!!
 
+            #check ssl connections and there properties
             if isinstance(conn.sock, ssl.SSLSocket) :
                 print conn.sock.cipher()
-                print conn.sock.do_handshake()
-                print conn.sock.getpeercert(binary_form=False)
+                conn.sock.do_handshake()
+
+                # pinning function
+                finterprint = conn.sock.getpeercert(binary_form=False)
+                if finterprint in self.cert_pinns:
+                    print "fingerprint matched"
+                else:
+                    if not req.headers['Host'] in self.allow_http:
+                        self.cert_pinns.append(conn.sock.getpeercert(binary_form=False))
+                    else:
+                        self.send_error(905, "Certificate Pinning mismatch")
+
                 #Check if a cipher suite is whitelisted ?
                 if cipherWhitelist.blacklist_cipher(conn.sock.cipher()):
                     if not req.headers['Host'] in self.allow_cipher:
                         self.reject_cipher("https://%s" % (req.headers['Host']))
                         return
+
+
             version_table = {9: 'HTTP/1.0', 10: 'HTTP/1.0', 11: 'HTTP/1.1'}
             setattr(res, 'headers', res.msg)
             setattr(res, 'response_version', version_table[res.version])
