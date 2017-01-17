@@ -29,6 +29,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
     logger=DebugLogger()
     logEncrypter1 = LogEncrypter()
     allow_http= []
+    allow_cipher= []
     remove_Headers=[
         "If-Modified-Since",
         "If-None-Match",
@@ -197,6 +198,9 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                         if v == "add":
                             print 'adding host '+req.headers['Host']
                             self.allow_http.append(req.headers['Host'])
+                        if v == "addC":
+                            print 'adding cipher '+req.headers['Host']
+                            self.allow_cipher.append(req.headers['Host'])
                         break
 
                     #handle insecure params
@@ -264,15 +268,14 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
 
             if isinstance(conn.sock, ssl.SSLSocket) :
                 print conn.sock.cipher()
-                # Check if a cipher suite is whitelisted ?
-                #if cipherWhitelist.check_cipher(conn.sock.cipher()):
-                    #print "cipher suite ok"
-                #else:
-                    #print "cipher suite unsecure"
-                    #self.reject_url(
-                        #"The webserver you are trying to access is considered using unsave cipher suites. For your own protection all requests to this server are rejected")
-                    #return
-            version_table = {10: 'HTTP/1.0', 11: 'HTTP/1.1'}
+                print conn.sock.do_handshake()
+                print conn.sock.getpeercert(binary_form=False)
+                #Check if a cipher suite is whitelisted ?
+                if cipherWhitelist.blacklist_cipher(conn.sock.cipher()):
+                    if not req.headers['Host'] in self.allow_cipher:
+                        self.reject_cipher("https://%s" % (req.headers['Host']))
+                        return
+            version_table = {9: 'HTTP/1.0', 10: 'HTTP/1.0', 11: 'HTTP/1.1'}
             setattr(res, 'headers', res.msg)
             setattr(res, 'response_version', version_table[res.version])
 
@@ -321,7 +324,7 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         setattr(res, 'headers', self.filter_headers(res.headers))
 
         self.wfile.write("%s %d %s\r\n" % (self.protocol_version, res.status, res.reason))
-        print self.protocol_version
+
         for line in res.headers.headers:
             self.wfile.write(line)
         self.end_headers()
@@ -426,6 +429,20 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write("<input type=\"hidden\" name=\"saferWeb\" value=\"add\">")
         self.wfile.write(
             "<p>Please confirm that you want to visit the website <br>%s<br> altough, it doesn't support https</p>" % self.headers['Host'])
+        self.wfile.write(
+            "<input type=\"submit\" value=\"Send request\"> <INPUT Type=\"button\" VALUE=\"Return to previous page\" onClick=\"history.go(-1);return true;\"></form></body>")
+
+    def reject_cipher(self, location):
+        print "Request to " + self.headers['Host'] + ": "+ self.path + " interceptend and stalled: "
+        print "return 903: The Website you are trying to access does not support secure connections"
+        self.wfile.write("%s %d %s\r\n" % (self.protocol_version, 903,
+                                           "The Website you are trying to access uses weak cipher suites"))
+        self.end_headers()
+        self.wfile.write("<body><head></head><body><h1>Request stalled</h1>")
+        self.wfile.write("<form action=\"https://" + self.headers['Host'] + "\" method=\"post\">")
+        self.wfile.write("<input type=\"hidden\" name=\"saferWeb\" value=\"addC\">")
+        self.wfile.write(
+            "<p>Please confirm that you want to visit the website <br>%s<br> altough, it uses weak cipher suites</p>" % self.headers['Host'])
         self.wfile.write(
             "<input type=\"submit\" value=\"Send request\"> <INPUT Type=\"button\" VALUE=\"Return to previous page\" onClick=\"history.go(-1);return true;\"></form></body>")
 

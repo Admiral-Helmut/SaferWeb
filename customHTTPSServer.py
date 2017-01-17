@@ -7,6 +7,7 @@ class CustomHTTPSServer(HTTPServer):
 
     server_address = ('', 8000)
     address_family = socket.AF_INET6
+    ssl.ssl_version=ssl.PROTOCOL_SSLv3
 
     # this errohandling surpress socket/ssl related errors
     # specially the SSLError: The read operation timed out
